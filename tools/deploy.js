@@ -1,16 +1,9 @@
-/**
- *
- *
-
- */
-
 import GitRepo from 'git-repository';
 import task from './lib/task';
 
-// TODO: Update deployment URL
 const remote = {
   name: 'github',
-  url: 'https://github.com/{user}/{repo}.git',
+  url: 'https://github.com/vnglst/converter2.git',
   branch: 'gh-pages',
 };
 
