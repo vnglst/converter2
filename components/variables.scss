@@ -8,15 +8,21 @@
  * Scaffolding
  * -------------------------------------------------------------------------- */
 
-$body-bg: #f7f7f7;
-$text-color: #333;
+$body-bg: #ffffff;
+$header-color: rgb(0, 0, 0);
+$text-color: rgb(77, 77, 77);
 $brand-color: #21ce99;
+$nav-color: rgb(153, 153, 153);
+
+$max-width: 620px;
 
 /*
  * Typography
  * -------------------------------------------------------------------------- */
 
-$font-family-base: 'Roboto', 'Helvetica', sans-serif;
+$font-family-base: 'Helvetica', sans-serif;
+$font-family-header: 'Source Sans Pro', sans-serif;
+$font-family-text: 'Droid Serif', Georgia, serif;
 
 /*
  * Media queries breakpoints

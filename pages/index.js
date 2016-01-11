@@ -5,14 +5,14 @@
  */
 
 import React, { Component } from 'react';
+import App from '../components/App/App.jsx';
 
 export default class extends Component {
 
   render() {
     return (
       <div>
-        <h1>Home Page</h1>
-        <p>Coming soon.</p>
+        <App />
       </div>
     );
   }

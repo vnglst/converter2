@@ -19,6 +19,9 @@ function Html({ title, description, body, debug }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,400italic|Droid+Serif:400,700,400italic" media="screen" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
         <script src={'/app.js?' + new Date().getTime()} />
       </head>
       <body>

@@ -3,30 +3,51 @@
  * https://github.com/koistya/react-static-boilerplate
  * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
  */
-
 @import '../variables.scss';
 
-.Navigation {
-  display: flex;
-  flex-direction: row;
-  margin: 2em 0 5em 0;
-  list-style: none;
-  justify-content: flex-end;
-}
+.Header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 2em;
 
-.Navigation-item {
-  padding: 0 2em;
-}
+		.Logo {
+				margin: 10px 0 0 0;
+		}
 
-.Navigation-link {
-  padding: 0.5em 1em;
-  color: $brand-color;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
+		.Logo-img {
 
-  &:hover {
-    border-bottom: 3px solid $brand-color;
-    color: $text-color;
-  }
+		}
+
+		.Navigation {
+				display: flex;
+				flex-direction: row;
+				margin: 0;
+				list-style: none;
+				justify-content: flex-end;
+				align-self: baseline;
+		}
+
+		.Navigation-item {
+
+		}
+
+		.Navigation-link {
+        font-family: 'Source Sans Pro', sans-serif;
+				padding: 0 1em;
+        color: $nav-color;
+				text-decoration: none;
+				text-transform: uppercase;
+				cursor: pointer;
+        font-size: 16px;
+        font-stretch: normal;
+        font-weight: bold;
+        height: auto;
+        letter-spacing: 1.5px;
+        line-height: 36px;
+
+				&:hover {
+						color: $text-color;
+				}
+		}
 }

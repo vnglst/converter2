@@ -30,6 +30,7 @@
     "precss": "^1.3.0",
     "raw-loader": "^0.5.1",
     "react": "^0.14.0",
+    "react-bootstrap": "^0.28.1",
     "react-dom": "^0.14.0",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
@@ -48,5 +49,6 @@
     "build": "babel-node --eval \"require('./tools/build')().catch(err => console.log(err.stack))\"",
     "start": "babel-node --eval \"require('./tools/start')().catch(err => console.log(err.stack))\"",
     "deploy": "babel-node --eval \"require('./tools/deploy')().catch(err => console.log(err.stack))\""
-  }
+  },
+  "dependencies": {}
 }
