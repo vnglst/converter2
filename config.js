@@ -1,11 +1,9 @@
-/**
- * React Static Boilerplate
- * https://github.com/koistya/react-static-boilerplate
- * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
- */
+//
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
 
 export default {
-  title: 'React Static Boilerplate',
-  description: 'Static website generator for React.js web applications.',
+  title: 'Translators Converter',
+  description: 'Converts line prices to word prices and viceversa.',
   googleAnalyticsId: 'UA-XXXXX-X',
 };
