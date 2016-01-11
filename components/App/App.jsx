@@ -1,3 +1,7 @@
+//
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
+
 import React from 'react';
 import './App.scss';
 import { Tab, Tabs } from 'react-bootstrap';

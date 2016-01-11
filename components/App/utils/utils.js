@@ -1,3 +1,6 @@
+//
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
 
 var store = function (namespace, data) {
   // first check whether we are in the browser

@@ -1,3 +1,7 @@
+//
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
+
 import React from 'react';
 import InputBox from './InputBox.jsx';
 import OutputBox from './OutputBox.jsx';
