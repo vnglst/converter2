@@ -1,8 +1,3 @@
-/**
- *
- *
-
- */
 
 import glob from 'glob';
 import { join, dirname } from 'path';

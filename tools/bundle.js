@@ -1,9 +1,3 @@
-/**
- *
- *
-
- */
-
 import webpack from 'webpack';
 import task from './lib/task';
 import webpackConfig from './webpack.config';

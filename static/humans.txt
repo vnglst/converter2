@@ -3,13 +3,22 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Koen van Gilst -- @vnglst
 
 # THANKS
 
-    <name>
+    Konstantin Tarkus -- @koistya
+
 
 # TECHNOLOGY COLOPHON
 
-    ES2015, HTML5, CSS3
-    React, Normalize.css
+    koistya/react-static-boilerplate
+    React.js
+    postCSS
+    Sass
+    ES6+
+    Babel
+    Webpack
+    BrowserSync
+    React Hot Loader
+    Surge.sh

@@ -1,9 +1,3 @@
-/**
- *
- *
-
- */
-
 import task from './lib/task';
 
 export default task(async function build() {

@@ -1,9 +1,3 @@
-/**
- *
- *
-
- */
-
 import task from './lib/task';
 import cp from './lib/copy';
 

@@ -48,7 +48,7 @@
     "clean": "babel-node --eval \"require('./tools/clean')().catch(err => console.log(err.stack))\"",
     "build": "babel-node --eval \"require('./tools/build')().catch(err => console.log(err.stack))\"",
     "start": "babel-node --eval \"require('./tools/start')().catch(err => console.log(err.stack))\"",
-    "deploy": "babel-node --eval \"require('./tools/deploy')().catch(err => console.log(err.stack))\""
+    "deploy": "npm run build release && surge -p ./build"
   },
   "dependencies": {}
 }

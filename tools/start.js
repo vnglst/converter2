@@ -1,9 +1,3 @@
-/**
- *
- *
-
- */
-
 import browserSync from 'browser-sync';
 import webpack from 'webpack';
 import hygienistMiddleware from 'hygienist-middleware';

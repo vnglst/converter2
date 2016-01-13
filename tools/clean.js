@@ -1,8 +1,6 @@
-/**
- *
- *
-
- */
+//
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
 
 import del from 'del';
 import task from './lib/task';
