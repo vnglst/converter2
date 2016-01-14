@@ -28,9 +28,8 @@ function Html({ title, description, body, debug }) {
         <GoogleAnalytics />
 
         /* Refactor to font component */
-        <script async src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
         <script dangerouslySetInnerHTML={fontScript} />;
-
       </body>
     </html>
   );
