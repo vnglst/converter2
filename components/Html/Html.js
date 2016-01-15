@@ -26,8 +26,6 @@ function Html({ title, description, body, debug }) {
       <body>
         <div id="app" dangerouslySetInnerHTML={{ __html: body }} />
         <GoogleAnalytics />
-
-        /* Refactor to font component */
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
         <script dangerouslySetInnerHTML={fontScript} />;
       </body>
