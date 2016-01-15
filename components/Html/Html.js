@@ -20,7 +20,7 @@ function Html({ title, description, body, debug }) {
         <title>{title || config.title}</title>
         <meta name="description" content={description || config.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="bogus"/>
         <script async src={'/app.js?' + new Date().getTime()} />
       </head>
       <body>
@@ -28,6 +28,7 @@ function Html({ title, description, body, debug }) {
         <GoogleAnalytics />
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
         <script dangerouslySetInnerHTML={fontScript} />;
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
       </body>
     </html>
   );
