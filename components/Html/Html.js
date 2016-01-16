@@ -4,12 +4,10 @@
 
 import React, { PropTypes } from 'react';
 import GoogleAnalytics from '../GoogleAnalytics';
+import Fonts from '../Fonts';
 import config from '../../config';
 
-// Refactor this to separate component for fonts
-const fontScript = { __html:
-  `WebFont.load({ google: { families: ['Droid+Serif:400,700,400italic', 'Source Sans Pro:400,600,700,900,400italic']} })`,
-};
+const bootstrapCND = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css';
 
 function Html({ title, description, body, debug }) {
   return (
@@ -20,15 +18,14 @@ function Html({ title, description, body, debug }) {
         <title>{title || config.title}</title>
         <meta name="description" content={description || config.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="bogus"/>
+        <link rel="stylesheet" href={bootstrapCND} media="bogus-real-load-below"/>
         <script async src={'/app.js?' + new Date().getTime()} />
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{ __html: body }} />
         <GoogleAnalytics />
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-        <script dangerouslySetInnerHTML={fontScript} />;
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <Fonts />
+        <link rel="stylesheet" href={bootstrapCND} />
       </body>
     </html>
   );
