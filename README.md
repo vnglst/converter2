@@ -16,3 +16,4 @@ $ npm start
 ```shell
 $ npm run deploy                # Deploys the project to surge.sh
 ```
+Using ```git push``` also runs the deploy command.
