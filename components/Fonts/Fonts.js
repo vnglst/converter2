@@ -15,7 +15,7 @@ function Fonts() {
   return (
     <div>
       <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-      <script dangerouslySetInnerHTML={fontScript} />;
+      <script dangerouslySetInnerHTML={fontScript} />
     </div>
   );
 }

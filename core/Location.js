@@ -1,9 +1,3 @@
-/**
- *
- *
-
- */
-
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
 import createHistory from 'history/lib/createBrowserHistory';
 import createMemoryHistory from 'history/lib/createMemoryHistory';

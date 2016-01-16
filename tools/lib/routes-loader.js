@@ -23,7 +23,6 @@ export default function(source) {
 
     const lines = files.map(file => {
       let path = '/' + file;
-      console.log(path);
 
       if (path === '/index.js' || path === '/index.jsx') {
         path = '/';
