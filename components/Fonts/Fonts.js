@@ -4,15 +4,10 @@
 
 import React from 'react';
 
-const fontsToLoad = [
-  'Droid+Serif:400,700,400italic',
-  'Source Sans Pro:400,600,700,900,400italic'
-];
-
 const fontScript = { __html:
   `WebFont.load({ google: { families: [` +
   `'Droid+Serif:400,700,400italic',` +
-  `'Source Sans Pro:400,600,700,900,400italic'` + 
+  `'Source Sans Pro:400,600,700,900,400italic'` +
   `] } })`,
 };
 

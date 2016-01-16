@@ -1,8 +1,6 @@
-/**
- *
- *
-
- */
+//
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
 
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
