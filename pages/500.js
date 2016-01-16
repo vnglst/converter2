@@ -12,7 +12,7 @@ export default class extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Content">
         <h1>Error</h1>
         <pre>{
           this.props.error ?

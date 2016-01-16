@@ -14,8 +14,7 @@ export default class App extends React.Component {
 	}
 	render () {
 		return (
-			<div className="Content">
-				<h1>Translator's Converter</h1>
+			<div>
 				<Tabs defaultActiveKey={1}>
 					<Tab eventKey={1} title="Lines → Words">
 						<Converter

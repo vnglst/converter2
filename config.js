@@ -3,7 +3,7 @@
 //
 
 export default {
-  title: 'Translator/`s Converter',
+  title: 'Translator`s Converter',
   description: 'Helps translators convert line to word prices.',
   googleAnalyticsId: 'UA-39537146-3',
 };
