@@ -57,78 +57,87 @@ var languageData = [
 			{source: 'Technical', charsPerWord: 6.23},
 			{source: 'Financial (annual report)', charsPerWord: 6.43}
 		]
+	},
+	{
+		name: 'Spanish',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 6.22},
+			{source: 'EU (legal)', charsPerWord: 5.87},
+			{source: 'Wikipedia', charsPerWord: 6.24}
+		]
+	},
+	{
+		name: 'Estonian',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 7.74 },
+			{source: 'EU (legal)', charsPerWord: 8.05}
+		]
+	},
+	{
+		name: 'Finnish',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 8.72},
+			{source: 'EU (legal)', charsPerWord: 8.61}
+		]
+	},
+	{
+		name: 'French',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 6.13},
+			{source: 'EU (legal)', charsPerWord: 6.28},
+			{source: 'Wikipedia', charsPerWord: 6.30},
+		]
+	},
+	{
+		name: 'Croatian',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 6.56},
+			{source: 'EU (legal)', charsPerWord: 6.61}
+		]
+	},
+	{
+		name: 'Hungarian',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 7.79},
+			{source: 'EU (legal)', charsPerWord: 7.55}
+		]
+	},
+	{
+		name: 'Italian',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 6.63},
+			{source: 'EU (legal)', charsPerWord: 6.65},
+			{source: 'Wikipedia', charsPerWord: 6.76}
+		]
+	},
+	{
+		name: 'Lithuanian',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 7.39},
+			{source: 'EU (legal)', charsPerWord: 7.20}
+		]
+	},
+	{
+		name: 'Latvian',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 7.52},
+			{source: 'EU (legal)', charsPerWord: 7.49}
+		]
+	},
+	{
+		name: 'Polish',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 7.29},
+			{source: 'EU (legal)', charsPerWord: 7.38}
+		]
+	},
+	{
+		name: 'Portuguese',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 6.15},
+			{source: 'EU (legal)', charsPerWord: 6.02}
+		]
 	}
-// 	,
-// 	{
-// 		name: 'Spanish',
-// 		stats: {
-// 			'Wolfram': 6.22,
-// 			'EU': 5.87,
-// 			'Wikipedia': 6.24,
-// 		}
-// }, {
-// 		name: 'Estonian',
-// 		stats: {
-// 			'Wolfram': 7.74,
-// 			'EU': 8.05,
-// 		}
-// }, {
-// 		name: 'Finnish',
-// 		stats: {
-// 			'Wolfram': 8.72,
-// 			'EU': 8.61,
-// 		}
-// }, {
-// 		name: 'French',
-// 		stats: {
-// 			'Wolfram': 6.13,
-// 			'EU': 6.28,
-// 			'Wikipedia': 6.30,
-// 		}
-// }, {
-// 		name: 'Croation',
-// 		stats: {
-// 			'Wolfram': 6.56,
-// 			'EU': 6.61,
-// 		}
-// }, {
-// 		name: 'Hungarian',
-// 		stats: {
-// 			'Wolfram': 7.79,
-// 			'EU': 7.55,
-// 		}
-// }, {
-// 		name: 'Italian',
-// 		stats: {
-// 			'Wolfram': 6.63,
-// 			'EU': 6.65,
-// 			'Wikipedia': 6.76,
-// 		}
-// }, {
-// 		name: 'Lithuanian',
-// 		stats: {
-// 			'Wolfram': 7.39,
-// 			'EU': 7.20,
-// 		}
-// }, {
-// 		name: 'Latvian',
-// 		stats: {
-// 			'Wolfram': 7.52,
-// 			'EU': 7.49,
-// 		}
-// },
-// }, {
-// 		name: 'Polish',
-// 		stats: {
-// 			'Wolfram': 7.29,
-// 			'EU': 7.38
-// 		}
-// }, {
-// 		name: 'Portuguese',
-// 		stats: {
-// 			'Wolfram': 6.15,
-// 			'EU': 6.02
-// 		}
 // }, {
 // 		name: 'Romanian',
 // 		stats: {
