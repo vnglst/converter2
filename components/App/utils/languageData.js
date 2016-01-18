@@ -137,31 +137,34 @@ var languageData = [
 			{source: 'Wolfram Alpha', charsPerWord: 6.15},
 			{source: 'EU (legal)', charsPerWord: 6.02}
 		]
+	},
+	{
+		name: 'Romanian',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 6.54},
+			{source: 'EU (legal)', charsPerWord: 6.46}
+		]
+	},
+	{
+		name: 'Slovenian',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 6.72},
+			{source: 'EU (legal)', charsPerWord: 6.60}
+		]
+	},
+	{
+		name: 'Swedish',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 6.92},
+			{source: 'EU (legal)', charsPerWord: 7.03}
+		]
+	},
+	{
+		name: 'Russian',
+		'stats': [
+			{source: 'Wolfram Alpha', charsPerWord: 7.36}
+		]
 	}
-// }, {
-// 		name: 'Romanian',
-// 		stats: {
-// 			'Wolfram': 6.54,
-// 			'EU': 6.46
-// 		}
-// }, {
-// 		name: 'Slovenian',
-// 		stats: {
-// 			'Wolfram': 6.72,
-// 			'EU': 6.60
-// 		}
-// }, {
-// 		name: 'Swedish',
-// 		stats: {
-// 			'Wolfram': 6.92,
-// 			'EU': 7.03
-// 		}
-// }, {
-// 		name: 'Russian',
-// 		stats: {
-// 			'Wolfram': 7.36
-// 		}
-// }
 ]
 
 export default languageData;
