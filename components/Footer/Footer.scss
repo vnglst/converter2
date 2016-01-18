@@ -1,0 +1,10 @@
+@import '../variables.scss';
+
+.Footer {
+		padding: 0 10px 0 10px;
+		margin: 55px auto 15px auto;
+		max-width: $max-width;
+		color: $footer-color;
+		font-size: 12px;
+		line-height: 17px
+}
