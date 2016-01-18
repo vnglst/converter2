@@ -9,7 +9,7 @@ export default class extends Component {
 
   render() {
     return (
-      <div className="Content">
+      <div className="App-Content">
 				<h1>Translator's Converter</h1>
         <App />
       </div>

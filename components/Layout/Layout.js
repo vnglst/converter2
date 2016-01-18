@@ -5,13 +5,16 @@
 import React, { PropTypes } from 'react';
 import './Layout.scss';
 import Navigation from '../Navigation';
+import Content from '../Content';
 import Footer from '../Footer';
 
 function Layout({ children }) {
   return (
     <div className="Layout">
       <Navigation />
-      {children}
+      <Content>
+        {children}
+      </Content>
       <Footer />
     </div>
   );

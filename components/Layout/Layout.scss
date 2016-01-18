@@ -37,21 +37,4 @@ html, body {
 .Layout {
   margin: 0;
   padding: 0;
-
-  .Content {
-    max-width: $max-width;
-    margin: 0px auto 0px auto;
-    padding: 0 18px 0 18px;
-
-    .Text {
-      font-size: 18px;
-      line-height: 34px;
-      font-family: $font-family-text;
-      color: $text-color;
-
-      .strikethrough {
-        text-decoration: line-through;
-      }
-    }
-  }
 }
