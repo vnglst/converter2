@@ -1,3 +1,7 @@
+//
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
+
 import React from 'react';
 import converterUtils from './utils/converterUtils';
 
@@ -11,10 +15,10 @@ export default class PriceSelect extends React.Component {
     const currentPrice = this.props.currentPrice;
     return (
       <div className="form-group">
-        <label className="col-sm-2 control-label" htmlFor="priceSelect">
+        <label className="col-sm-3 control-label" htmlFor="priceSelect">
           {priceLabel}
         </label>
-        <div className="col-sm-10">
+        <div className="col-sm-9">
           <select
             value={currentPrice}
             onChange={this._changePrice}

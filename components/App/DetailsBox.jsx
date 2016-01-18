@@ -1,8 +1,11 @@
+//
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
+
 import React from 'react';
 import converterUtils from './utils/converterUtils.js';
 import {Table} from 'react-bootstrap';
 import CollapsiblePanel from './CollapsiblePanel.jsx';
-// import '../style/DetailsBox.less';
 
 export default class DetailsBox extends React.Component {
 	constructor(props) {

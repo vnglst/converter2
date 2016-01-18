@@ -4,7 +4,7 @@ import converterUtils from './utils/converterUtils.js';
 export default class LangSelect extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { baconIsReady: false };
+		// this.state = { baconIsReady: false };
 	}
 	render () {
 		const languageData = converterUtils.getLanguageData();
@@ -12,10 +12,10 @@ export default class LangSelect extends React.Component {
 		const currentLang = this.props.currentLang;
 		return (
 			<div className="form-group">
-				<label className="col-sm-2 control-label" htmlFor="langSelect">
+				<label className="col-sm-3 control-label" htmlFor="langSelect">
 					{langLabel}
 				</label>
-				<div className="col-sm-10">
+				<div className="col-sm-9">
 					<select
 						value={currentLang}
 						onChange={this._changeLang}

@@ -1,9 +1,10 @@
+//
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
+
 import React from 'react';
 import LangSelect from './LangSelect.jsx';
 import PriceSelect from './PriceSelect.jsx';
-
-// Maybe add later
-// import Toggle from './Toggle.jsx';
 
 export default class InputBox extends React.Component {
   constructor(props) {

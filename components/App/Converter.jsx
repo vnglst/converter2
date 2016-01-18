@@ -25,8 +25,8 @@ export default class Converter extends React.Component {
 
     this.storageName = 'localStorage' + fromUnit + 'to' + toUnit;
     const storedState = utils.store(this.storageName);
-    // storedState = false if empty or not in browser
-    this.state = storedState ? storedState : defaultState;
+    // storedState is "false" if empty OR environment != browser
+    this.state = storedState || defaultState;
   }
 
   componentDidUpdate () {

@@ -1,3 +1,7 @@
+//
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
+
 import React from 'react';
 import converterUtils from './utils/converterUtils.js';
 
@@ -10,10 +14,10 @@ export default class PriceOutput extends React.Component {
 		const priceLabel = 'Rate per '+this.props.toUnit+' (range)';
 		return(
 			<div className="form-group">
-				<label className="col-sm-2 control-label" htmlFor="priceSpan">
+				<label className="col-sm-3 control-label" htmlFor="priceSpan">
 					{priceLabel}
 				</label>
-				<div className="col-sm-10">
+				<div className="col-sm-9">
 					<span className="form-control" id="priceSpan" readOnly>
 						{wordPriceString}
 					</span>
