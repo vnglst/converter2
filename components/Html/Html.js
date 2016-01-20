@@ -19,7 +19,7 @@ function Html({ title, description, body, debug }) {
         <meta name="description" content={description || config.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href={bootstrapCND} media="bogus-real-load-below"/>
-        <script async src={'/app.js?' + new Date().getTime()} />
+        <script src={'/app.js?' + new Date().getTime()} />
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{ __html: body }} />
