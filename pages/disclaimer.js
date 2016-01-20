@@ -22,7 +22,6 @@ export default class extends Component {
           You can verify your own results by using Microsoft Word or a CAT tool (like MemoQ or Trados).
         </p>
 
-        <h2>Legal notice</h2>
         <h2>Responsible for site content:</h2>
         <p>
           Koen van Gilst<br />
