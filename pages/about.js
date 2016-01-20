@@ -35,6 +35,7 @@ export default class extends Component {
         </ul>
 
         <h2>What people are saying</h2>
+        
         <blockquote className="twitter-tweet" lang="nl"><p lang="en" dir="ltr">Word to Line Rates - Useful tool for German translators who often charge per line <a href="http://t.co/GtwYso9EIo">http://t.co/GtwYso9EIo</a> <a href="https://twitter.com/hashtag/xl8?src=hash">#xl8</a></p>&mdash; Alessandra Vita (@AVInterpreter) <a href="https://twitter.com/AVInterpreter/status/654233874935975936">14 oktober 2015</a></blockquote>
 
         <blockquote className="twitter-tweet" lang="nl"><p lang="en" dir="ltr">Word to Line Rates: useful conversion tool for translators <a href="http://t.co/gd5IV1rK2k">http://t.co/gd5IV1rK2k</a> <a href="https://twitter.com/hashtag/business?src=hash">#business</a> <a href="https://twitter.com/hashtag/xl8?src=hash">#xl8</a></p>&mdash; Giorgia Garavini (@GioGaravini) <a href="https://twitter.com/GioGaravini/status/655001270269399040">16 oktober 2015</a></blockquote>
