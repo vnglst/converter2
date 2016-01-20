@@ -1,5 +1,10 @@
 @import '../variables.scss';
 
+@font-face {
+   font-family: 'Aller';
+   src: url('../Fonts/aller_bd-webfont.woff');
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -11,13 +16,13 @@ html, body {
     color: $header-color;
     font-family: $font-family-header;
     font-size: 44px;
-    line-height: 36px;
+    line-height: 48px;
     font-stretch: normal;
     font-style: normal;
     font-variant: normal;
     font-weight: 900;
     margin-top: 56px;
-    margin-bottom: 46px;
+    margin-bottom: 40px;
   }
 
   h2 {
