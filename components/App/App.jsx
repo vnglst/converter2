@@ -4,7 +4,8 @@
 
 import React from 'react';
 import './App.scss';
-import { Tab, Tabs } from 'react-bootstrap';
+import Tab from 'react-bootstrap/lib/Tab';
+import Tabs from 'react-bootstrap/lib/Tabs';
 import Converter from './Converter.jsx';
 import logoSource from './img/logo-vangilst.png';
 
