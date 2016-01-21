@@ -6,7 +6,7 @@ import React from 'react';
 import InputBox from './InputBox/InputBox.jsx';
 import OutputBox from './OutputBox/OutputBox.jsx';
 import DetailsBox from './DetailsBox/DetailsBox.jsx';
-import utils from '../utils/utils.js';
+import * as utils from '../utils/utils.js';
 
 export default class Converter extends React.Component {
   constructor(props) {

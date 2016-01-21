@@ -3,7 +3,7 @@
 //
 
 import React from 'react';
-import converterUtils from '../../utils/converterUtils';
+import * as converterUtils from '../../utils/converterUtils';
 
 export default class PriceSelect extends React.Component {
   constructor(props){
