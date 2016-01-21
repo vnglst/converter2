@@ -1,10 +1,9 @@
 import React from 'react';
-import converterUtils from './utils/converterUtils.js';
+import converterUtils from '../../utils/converterUtils.js';
 
 export default class LangSelect extends React.Component {
 	constructor(props) {
 		super(props);
-		// this.state = { baconIsReady: false };
 	}
 	render () {
 		const languageData = converterUtils.getLanguageData();
