@@ -105,7 +105,6 @@ var getLinePriceString = function (wordPrice, charsPerWord) {
 	return euroPriceString;
 }
 
-
 //
 var calculateWordsPerLine = function (charsPerWord) {
 	return 55 / charsPerWord;
