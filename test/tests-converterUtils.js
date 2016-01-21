@@ -4,7 +4,7 @@
 
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import converterUtils from '../components/App/utils/converterUtils.js';
+import * as converterUtils from '../components/App/utils/converterUtils.js';
 
 describe('converterUtils: getLinePriceRangeString("Dutch", 0.20)', () => {
   let priceRangString = converterUtils.getLinePriceRangeString('Dutch', 0.20);

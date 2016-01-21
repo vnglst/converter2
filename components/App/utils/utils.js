@@ -2,7 +2,7 @@
 // Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
 //
 
-var store = function (namespace, data) {
+export function store (namespace, data) {
   // first check whether we are in the browser
   // and not prerendering in Node env
   const isBrowser = typeof window !== 'undefined';
@@ -16,10 +16,3 @@ var store = function (namespace, data) {
 	// Returns false if not found in localStorage
 	return (store && JSON.parse(store));
 }
-
-// Exported public methods
-var utils = {
-	store: store
-}
-
-export default utils;

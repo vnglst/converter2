@@ -1,7 +1,7 @@
 import languageData from './languageData.js';
 
 // Generates a list of price options for select input field
-var generatePriceOptions = function(start, max, steps) {
+export function generatePriceOptions(start, max, steps) {
 	let priceOptions = [];
 	for (let priceOption = start; priceOption <= max; priceOption += steps)
 		priceOptions.push(priceOption.toFixed(2));
@@ -9,7 +9,7 @@ var generatePriceOptions = function(start, max, steps) {
 }
 
 // Returns languageData sorted alphabetically on language name
-var getLanguageData = function () {
+export function getLanguageData() {
 	const languages = getSortedLanguageData();
 	return languages;
 }
@@ -28,7 +28,8 @@ var getSortedLanguageData = function () {
 	return languageData.sort(sortFunction);
 }
 
-var priceToEuroString = function (price) {
+// Rounds price to 2 decimals and adds euro sign
+export function priceToEuroString (price) {
 	let floatingPrice = parseFloat(price);
 	return '€ ' + floatingPrice.toFixed(2);
 }
@@ -38,7 +39,7 @@ var priceToEuroString = function (price) {
 //
 
 //
-var getLinePriceRangeString = function (langName, wordPrice) {
+export function getLinePriceRangeString(langName, wordPrice) {
 	const linePrices = calculateLinePrices(langName, wordPrice);
 	return getPriceString(linePrices);
 }
@@ -64,8 +65,9 @@ var calculateLinePrices = function (langName, wordPrice) {
 // TO WORD PRICES
 //
 
-//
-var getWordPriceRangeString = function (langName, linePrice) {
+// Example input: 'Dutch', 1,35
+// Example output: '€ 0.18 - € 0.20'
+export function getWordPriceRangeString (langName, linePrice) {
 	const wordPrices = calculateWordPrices(langName, linePrice);
 	return getPriceString(wordPrices);
 }
@@ -91,22 +93,25 @@ var calculateWordPrices = function (langName, linePrice) {
 // DETAILSBOX
 //
 
-//
-var getWordPriceString = function (linePrice, charsPerWord) {
+// Example input: 1.35, 8
+// Example output: € 0.20
+export function getWordPriceString(linePrice, charsPerWord) {
 	const wordPrice = calculateWordPrice(linePrice, charsPerWord);
 	const euroPriceString = priceToEuroString(wordPrice);
 	return euroPriceString;
 }
 
-//
-var getLinePriceString = function (wordPrice, charsPerWord) {
+// Example input: 0.20, 8
+// Example output: € 1.35
+export function getLinePriceString(wordPrice, charsPerWord) {
 	const linePrice = calculateLinePrice(wordPrice, charsPerWord);
 	const euroPriceString = priceToEuroString(linePrice);
 	return euroPriceString;
 }
 
-//
-var calculateWordsPerLine = function (charsPerWord) {
+// Example input: 8
+// Example output: 10
+export function calculateWordsPerLine (charsPerWord) {
 	return 55 / charsPerWord;
 }
 
@@ -123,11 +128,10 @@ var calculateLinePrice = function (wordPrice, charsPerWord) {
 	return linePrice;
 }
 
-// Parameter: langName (string)
+// Input: langName (string)
 // Finds the index in the array for langName
-// Returns: the array of chars per word from
-// the language object at index
-var getStats = function (langName) {
+// Output: the array of chars per word from the language object at index
+export function getStats (langName) {
 	const language = getLanguage(langName);
 	return language.stats;
 }
@@ -148,18 +152,3 @@ var getPriceString = function (prices) {
 	const minPrice = Math.min.apply(Math, prices);
 	return (maxPrice === minPrice) ? priceToEuroString(minPrice) : priceToEuroString(minPrice) + ' - ' + priceToEuroString(maxPrice);
 };
-
-// Exported public methods
-var converterUtils = {
-	generatePriceOptions: generatePriceOptions,
-	getLanguageData: getLanguageData,
-	priceToEuroString: priceToEuroString,
-	getLinePriceRangeString: getLinePriceRangeString,
-	getWordPriceRangeString: getWordPriceRangeString,
-	getWordPriceString: getWordPriceString,
-	getLinePriceString: getLinePriceString,
-	calculateWordsPerLine: calculateWordsPerLine,
-	getStats: getStats
-}
-
-export default converterUtils;

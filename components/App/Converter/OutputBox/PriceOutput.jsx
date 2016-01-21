@@ -3,7 +3,7 @@
 //
 
 import React from 'react';
-import converterUtils from '../../utils/converterUtils.js';
+import * as converterUtils from '../../utils/converterUtils.js';
 
 export default class PriceOutput extends React.Component {
 	constructor(props) {

@@ -3,7 +3,7 @@
 //
 
 import React from 'react';
-import converterUtils from '../../utils/converterUtils.js';
+import * as converterUtils from '../../utils/converterUtils.js';
 import Table from 'react-bootstrap/lib/Table';
 import CollapsiblePanel from '../CollapsiblePanel.jsx';
 
