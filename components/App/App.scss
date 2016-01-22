@@ -6,6 +6,9 @@
   max-width: $max-width;
 }
 
+/*
+Removed, see discussion: https://github.com/react-bootstrap/react-bootstrap/issues/1615
+
 a:focus {
   outline: none !important;
 }
@@ -13,3 +16,5 @@ a:focus {
 .btn:focus {
   outline: none !important;
 }
+
+*/

@@ -40,7 +40,6 @@ describe('converterUtils: getHourPriceRangeString("Dutch", 0.20)', () => {
 
 describe('converterUtils: getPriceRange', () => {
   let priceRange = converterUtils.getPriceRange({ langName: 'Dutch', wordPrice: '0.20'});
-
   it('Should return an object', function() {
     expect(priceRange).to.be.a('object');
     });
