@@ -35,10 +35,46 @@ export function priceToEuroString (price) {
 }
 
 //
-// TO LINESPRICES
+// TO ALL PRICES
 //
 
+// Example input:
+// {
+// 	langName: 'Dutch',
+// 	wordPrice: '0.20',
+// }
+// Example output: '€ 1.30 - € 1.40'
+export function getPriceRange(params) {
+	const langName = params.langName;
+	const wordPrice = params.wordPrice;
+	const linePrice = params.linePrice;
+	// const linePrices = calculateLinePrices(langName, wordPrice);
+	// return getPriceString(linePrices);
+	return {
+		perWord: wordPrice || getWordPriceRangeString(langName, linePrice),
+		perLine: linePrice || getLinePriceRangeString(langName, wordPrice),
+		perHour: "€ 40 - € 50"
+	}
+}
+
 //
+// TO HOUR PRICES
+//
+
+// Example input: 'Dutch', 0.20
+// Example output: '€ 1.30 - € 1.40'
+export function getHourPriceRangeString(langName, wordPrice) {
+	// const linePrices = calculateLinePrices(langName, wordPrice);
+	// return getPriceString(linePrices);
+	return "€ 40 - € 50";
+}
+
+//
+// TO LINE PRICES
+//
+
+// Example input: 'Dutch', 0.20
+// Example output: '€ 1.30 - € 1.40'
 export function getLinePriceRangeString(langName, wordPrice) {
 	const linePrices = calculateLinePrices(langName, wordPrice);
 	return getPriceString(linePrices);
@@ -115,7 +151,8 @@ export function calculateWordsPerLine (charsPerWord) {
 	return 55 / charsPerWord;
 }
 
-//
+// Example input: 1.30, 8
+// Example output: 0.20
 var calculateWordPrice = function (linePrice, charsPerWord) {
 	const wordPrice = linePrice * charsPerWord / 55;
 	return wordPrice;
