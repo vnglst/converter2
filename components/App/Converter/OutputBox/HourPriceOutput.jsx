@@ -5,17 +5,17 @@
 import React from 'react';
 import * as converterUtils from '../../utils/converterUtils.js';
 
-export default class PriceOutput extends React.Component {
+export default class HourPriceOutput extends React.Component {
 	constructor(props) {
 		super(props)
 	}
 	render () {
 		const priceString = this.renderPrice();
-		const priceLabel = 'Rate per '+this.props.toUnit;
+		const priceLabel = 'Rate per hour';
 		return(
 			<div className="form-group">
 				<label className="col-sm-3 control-label" htmlFor="priceSpan">
-					{priceLabel}<sup> (1)</sup>
+					{priceLabel}<sup> (2)</sup>
 				</label>
 				<div className="col-sm-9">
 					<span className="form-control" id="priceSpan" readOnly>
@@ -29,25 +29,25 @@ export default class PriceOutput extends React.Component {
 		const fromUnit = this.props.fromUnit;
 		switch (fromUnit){
 			case 'word':
-				return this.renderLinePrice();
+				return this.renderFromLinePrice();
 				break;
 			case 'line':
-				return this.renderWordPrice();
+				return this.renderFromWordPrice();
 				break;
 			default:
 				return 'Unit not recognized'
 		}
 	}
-	renderLinePrice = () => {
+	renderFromLinePrice = () => {
 		const langName = this.props.currentLang;
 		const wordPrice = this.props.currentPrice;
-		const linePriceString = converterUtils.getLinePriceRangeString(langName, wordPrice);
-		return linePriceString;
+		const hourPriceString = converterUtils.getHourPriceRangeString(langName, wordPrice);
+		return hourPriceString;
 	}
-	renderWordPrice = () => {
+	renderFromWordPrice = () => {
 		const langName = this.props.currentLang;
 		const linePrice = this.props.currentPrice;
-		const wordPriceString = converterUtils.getWordPriceRangeString(langName, linePrice);
-		return wordPriceString;
+		const hourPriceString = converterUtils.getHourPriceRangeString(langName, linePrice);
+		return hourPriceString;
 	}
 }

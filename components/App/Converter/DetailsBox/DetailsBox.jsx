@@ -48,7 +48,7 @@ export default class DetailsBox extends React.Component {
 			<tr key={i}>
 				<td>{source}</td>
 				<td>{priceString}</td>
-				<td>{wordsPerLine.toFixed(1)} words per line<sup>(1)</sup></td>
+				<td>{wordsPerLine.toFixed(1)} words per line<sup> (1)</sup></td>
 			</tr>
 		);
 	}
