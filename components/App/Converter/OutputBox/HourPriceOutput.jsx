@@ -11,7 +11,7 @@ export default class HourPriceOutput extends React.Component {
 	}
 	render () {
 		const priceString = this.renderPrice();
-		const priceLabel = 'Rate per hour';
+		const priceLabel = 'Est. hourly rate';
 		return(
 			<div className="form-group">
 				<label className="col-sm-3 control-label" htmlFor="priceSpan">

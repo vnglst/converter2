@@ -37,6 +37,9 @@ export function priceToEuroString (price) {
 //
 // TO HOUR PRICES
 //
+// TODO: Add tests
+// TODO: Use global constants
+// TODO: Calculate lines per hour based on words per hour + source language
 
 // Example input: 'Dutch', 0.20
 // Example output: '€ 50
