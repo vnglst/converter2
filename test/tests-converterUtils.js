@@ -26,10 +26,10 @@ describe('converterUtils: getLinePriceRangeString("Dutch", 0.20)', () => {
 });
 
 //
-// getHourPriceRangeString
+// getHourPriceFromWordPrice
 //
-describe('converterUtils: getHourPriceRangeString("Dutch", 0.20)', () => {
-  let priceRangeString = converterUtils.getHourPriceRangeString('Dutch', 0.20);
+describe('converterUtils: getHourPriceFromWordPrice("Dutch", 0.20)', () => {
+  let priceRangeString = converterUtils.getHourPriceFromWordPrice('Dutch', 0.20);
 
   it('Should return a string', function() {
     expect(priceRangeString).to.be.a('string');
@@ -39,7 +39,4 @@ describe('converterUtils: getHourPriceRangeString("Dutch", 0.20)', () => {
     expect(priceRangeString).to.contain('€');
   });
 
-  it('Equal to € 40 - € 50', function() {
-    expect(priceRangeString).to.equal('€ 40 - € 50');
-  });
 });
