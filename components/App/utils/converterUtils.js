@@ -35,29 +35,6 @@ export function priceToEuroString (price) {
 }
 
 //
-// TO ALL PRICES
-//
-
-// Example input:
-// {
-// 	langName: 'Dutch',
-// 	wordPrice: '0.20',
-// }
-// Example output: '€ 1.30 - € 1.40'
-export function getPriceRange(params) {
-	const langName = params.langName;
-	const wordPrice = params.wordPrice;
-	const linePrice = params.linePrice;
-	// const linePrices = calculateLinePrices(langName, wordPrice);
-	// return getPriceString(linePrices);
-	return {
-		perWord: wordPrice || getWordPriceRangeString(langName, linePrice),
-		perLine: linePrice || getLinePriceRangeString(langName, wordPrice),
-		perHour: "€ 40 - € 50"
-	}
-}
-
-//
 // TO HOUR PRICES
 //
 
@@ -66,7 +43,7 @@ export function getPriceRange(params) {
 export function getHourPriceRangeString(langName, wordPrice) {
 	// const linePrices = calculateLinePrices(langName, wordPrice);
 	// return getPriceString(linePrices);
-	return "€ 40 - € 50";
+	return '€ 40 - € 50';
 }
 
 //

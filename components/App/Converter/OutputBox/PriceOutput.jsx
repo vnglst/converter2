@@ -10,16 +10,16 @@ export default class PriceOutput extends React.Component {
 		super(props)
 	}
 	render () {
-		const wordPriceString = this.renderPrice();
-		const priceLabel = 'Rate per '+this.props.toUnit+' (range)';
+		const priceString = this.renderPrice();
+		const priceLabel = 'Rate per '+this.props.toUnit;
 		return(
 			<div className="form-group">
 				<label className="col-sm-3 control-label" htmlFor="priceSpan">
-					{priceLabel}
+					{priceLabel}<sup> (1)</sup>
 				</label>
 				<div className="col-sm-9">
 					<span className="form-control" id="priceSpan" readOnly>
-						{wordPriceString}
+						{priceString}
 					</span>
 				</div>
 			</div>
