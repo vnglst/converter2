@@ -34,6 +34,10 @@ export default class DetailsBox extends React.Component {
 							<td><sup>(1)</sup> <b>Standard line</b></td>
 							<td>55 characters (including spaces)</td>
 						</tr>
+						<tr>
+							<td><sup>(2)</sup> <b>Assuming</b></td>
+							<td>2000 words per day (8 hours)</td>
+						</tr>
 					</tfoot>
 				</Table>
 			</CollapsiblePanel>
