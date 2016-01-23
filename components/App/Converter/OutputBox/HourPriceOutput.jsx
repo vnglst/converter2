@@ -29,25 +29,25 @@ export default class HourPriceOutput extends React.Component {
 		const fromUnit = this.props.fromUnit;
 		switch (fromUnit){
 			case 'word':
-				return this.renderFromLinePrice();
+				return this.renderFromWordPrice();
 				break;
 			case 'line':
-				return this.renderFromWordPrice();
+				return this.renderFromLinePrice();
 				break;
 			default:
 				return 'Unit not recognized'
 		}
 	}
-	renderFromLinePrice = () => {
-		const langName = this.props.currentLang;
-		const wordPrice = this.props.currentPrice;
-		const hourPriceString = converterUtils.getHourPriceRangeString(langName, wordPrice);
-		return hourPriceString;
-	}
 	renderFromWordPrice = () => {
 		const langName = this.props.currentLang;
+		const wordPrice = this.props.currentPrice;
+		const hourPriceString = converterUtils.getHourPriceFromWordPrice(langName, wordPrice);
+		return hourPriceString;
+	}
+	renderFromLinePrice = () => {
+		const langName = this.props.currentLang;
 		const linePrice = this.props.currentPrice;
-		const hourPriceString = converterUtils.getHourPriceRangeString(langName, linePrice);
+		const hourPriceString = converterUtils.getHourPriceFromLinePrice(langName, linePrice);
 		return hourPriceString;
 	}
 }
