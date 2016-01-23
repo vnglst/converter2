@@ -10,7 +10,7 @@ function Footer() {
   return (
     <div className="Footer">
       <p>
-        The Word to Line Rates Converter is released under <a href="https://creativecommons.org/licenses/by/4.0/deed.nl">CC license</a>. The Converter is made by <a href="http://vangilst.de/">Koen van Gilst</a> and the source code is <a href="https://github.com/vnglst/converter2">available on Github</a>.
+        The Translator's Converter is released under <a href="https://github.com/vnglst/converter2/blob/master/LICENSE">MIT License</a>. This website is made by <a href="http://vangilst.de/">Koen van Gilst</a> (<a href="https://twitter.com/vnglst">@vnglst</a>) and the source code is <a href="https://github.com/vnglst/converter2">available on Github</a>. <a href="/disclaimer">Disclaimer</a>. 
       </p>
     </div>
   );
