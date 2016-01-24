@@ -16,7 +16,7 @@ export function getLanguageData() {
 
 // Sorts languageData array on language name
 // Returns sorted array
-var getSortedLanguageData = function () {
+let getSortedLanguageData = function () {
 	let sortFunction = function (a, b) {
 		let nameA = a.name;
 		let nameB = b.name;
@@ -30,8 +30,72 @@ var getSortedLanguageData = function () {
 
 // Rounds price to 2 decimals and adds euro sign
 export function priceToEuroString (price) {
+	// if price is an array, return price range string
+	if (Array.isArray(price)) return getPriceString(price);
+	// else add euro sign and return
 	let floatingPrice = parseFloat(price);
 	return '€ ' + floatingPrice.toFixed(2);
+}
+
+// Returns a readable string with a price range
+// With a max and min value or one single value
+let getPriceString = function (prices) {
+	const maxPrice = Math.max.apply(Math, prices);
+	const minPrice = Math.min.apply(Math, prices);
+	return (maxPrice === minPrice) ? priceToEuroString(minPrice) : priceToEuroString(minPrice) + ' - ' + priceToEuroString(maxPrice);
+};
+
+//
+// convertFromLinePrices
+//
+
+export function convertFromLinePrices(options) {
+	// Options
+	const langName = options.langName;
+	const linePrice = options.linePrice;
+	const charsPerPage = options.charsPerPage || 1500;
+	const charsPerLine = options.charsPerLine || 55;
+	const linesPerHour = options.linesPerHour || 30;
+
+	// Conversions
+	const charsPrice = linePrice / charsPerLine;
+	const pagePrice = charsPrice * charsPerPage;
+	const wordPrice = calculateWordPrices(langName, linePrice);
+	const hourPrice = linesPerHour * linePrice;
+
+	// Return object
+	return {
+		linePrice: linePrice,
+		pagePrice: priceToEuroString(pagePrice),
+		wordPrice: priceToEuroString(wordPrice),
+		hourPrice: priceToEuroString(hourPrice)
+	}
+}
+
+//
+// convertFromWordPrices
+//
+
+export function convertFromWordPrices(options) {
+	// Options
+	const langName = options.langName;
+	const wordPrice = options.wordPrice;
+	const charsPerPage = options.charsPerPage || 1500;
+	const charsPerLine = options.charsPerLine || 55;
+	const wordsPerHour = options.wordsPerHour || 250;
+
+	// Conversions
+	// const charsPrice = linePrice / charsPerLine;
+	// const pagePrice = charsPrice * charsPerPage;
+	const linePrice = calculateLinePrices(langName, wordPrice);
+	const hourPrice = wordsPerHour * wordPrice;
+
+	// Return object
+	return {
+		wordPrice: wordPrice,
+		linePrice: priceToEuroString(linePrice),
+		hourPrice: priceToEuroString(hourPrice)
+	}
 }
 
 //
@@ -169,12 +233,3 @@ var getLanguage = function (langName) {
 	const langIndex = languageData.findIndex((language) => language.name === langName);
 	return languageData[langIndex];
 }
-
-// Returns a readable string with a price range
-// With a max and min value
-// Or one single value
-var getPriceString = function (prices) {
-	const maxPrice = Math.max.apply(Math, prices);
-	const minPrice = Math.min.apply(Math, prices);
-	return (maxPrice === minPrice) ? priceToEuroString(minPrice) : priceToEuroString(minPrice) + ' - ' + priceToEuroString(maxPrice);
-};
