@@ -41,13 +41,20 @@ export default class PriceOutput extends React.Component {
 	renderLinePrice = () => {
 		const langName = this.props.currentLang;
 		const wordPrice = this.props.currentPrice;
-		const linePriceString = converterUtils.getLinePriceRangeString(langName, wordPrice);
-		return linePriceString;
+		const output = converterUtils.convertFromWordPrices({
+				langName: langName,
+				wordPrice: wordPrice
+			});
+		return output.linePrice;
+
 	}
 	renderWordPrice = () => {
 		const langName = this.props.currentLang;
 		const linePrice = this.props.currentPrice;
-		const wordPriceString = converterUtils.getWordPriceRangeString(langName, linePrice);
-		return wordPriceString;
+		const output = converterUtils.convertFromLinePrices({
+				langName: langName,
+				linePrice: linePrice
+			});
+		return output.wordPrice;
 	}
 }

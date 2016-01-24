@@ -1,31 +1,21 @@
 import languageData from './languageData.js';
 
-// Generates a list of price options for select input field
-export function generatePriceOptions(start, max, steps) {
-	let priceOptions = [];
-	for (let priceOption = start; priceOption <= max; priceOption += steps)
-		priceOptions.push(priceOption.toFixed(2));
-	return priceOptions;
+//
+// GENERAL HELPER FUNCTIONS
+//
+//
+
+// wordPrice -> linePrice
+var calculateWordPrice = function (linePrice, charsPerWord) {
+	const wordPrice = linePrice * charsPerWord / 55;
+	return wordPrice;
 }
 
-// Returns languageData sorted alphabetically on language name
-export function getLanguageData() {
-	const languages = getSortedLanguageData();
-	return languages;
-}
-
-// Sorts languageData array on language name
-// Returns sorted array
-let getSortedLanguageData = function () {
-	let sortFunction = function (a, b) {
-		let nameA = a.name;
-		let nameB = b.name;
-		//sort string ascending
-		if (nameA < nameB) return -1
-		if (nameA > nameB) return 1
-		return 0 //default return value (no sorting)
-	};
-	return languageData.sort(sortFunction);
+// linePrice -> wordPrice
+var calculateLinePrice = function (wordPrice, charsPerWord) {
+	const wordsPerLine = calculateWordsPerLine(charsPerWord);
+	const linePrice = wordsPerLine * wordPrice;
+	return linePrice;
 }
 
 // Rounds price to 2 decimals and adds euro sign
@@ -37,8 +27,7 @@ export function priceToEuroString (price) {
 	return '€ ' + floatingPrice.toFixed(2);
 }
 
-// Returns a readable string with a price range
-// With a max and min value or one single value
+// Converts array with prices to price range string
 let getPriceString = function (prices) {
 	const maxPrice = Math.max.apply(Math, prices);
 	const minPrice = Math.min.apply(Math, prices);
@@ -46,7 +35,7 @@ let getPriceString = function (prices) {
 };
 
 //
-// convertFromLinePrices
+// CONVERT FROM LINEPRICES
 //
 
 let getAverageCharsPerWord = function(langName){
@@ -60,6 +49,22 @@ let getAverageCharsPerWord = function(langName){
 		}
 	})
 	return average(charsArr);
+}
+
+// Calculates word prices based on language and linePrice, return an array of prices
+let calculateWordPrices = function (langName, linePrice) {
+	const stats = getStats(langName);
+	let wordPriceArr = [];
+	let wordPrice;
+	// Loop through all charPerWord values
+	stats.map(function (stats) {
+		const charsPerWord = stats.charsPerWord;
+		if (charsPerWord !== 0) {
+			wordPrice = calculateWordPrice(linePrice, charsPerWord);
+			wordPriceArr.push(wordPrice);
+		}
+	})
+	return wordPriceArr;
 }
 
 export function convertFromLinePrices(options) {
@@ -89,7 +94,7 @@ export function convertFromLinePrices(options) {
 }
 
 //
-// convertFromWordPrices
+// CONVERT FROM WORDPRICES
 //
 
 let average = function(arr) {
@@ -97,6 +102,22 @@ let average = function(arr) {
   return a + b;
 	});
 	return total / arr.length;
+}
+
+// Calculates word prices based on language and wordPrice returns an array of prices
+var calculateLinePrices = function (langName, wordPrice) {
+	const stats = getStats(langName);
+	let linePriceArr = [];
+	let linePrice;
+	// Loop through all charPerWord values
+	stats.map(function (stats) {
+		const charsPerWord = stats.charsPerWord;
+		if (charsPerWord !== 0) {
+			linePrice = calculateLinePrice(wordPrice, charsPerWord);
+			linePriceArr.push(linePrice);
+		}
+	})
+	return linePriceArr;
 }
 
 export function convertFromWordPrices(options) {
@@ -121,86 +142,6 @@ export function convertFromWordPrices(options) {
 		linePrice: priceToEuroString(linePrice),
 		hourPrice: priceToEuroString(hourPrice)
 	}
-}
-
-//
-// TO HOUR PRICES
-//
-// TODO: Add tests
-// TODO: Use global constants
-// TODO: Calculate lines per hour based on words per hour + source language
-
-// Example input: 'Dutch', 0.20
-// Example output: '€ 50
-export function getHourPriceFromWordPrice(langName, wordPrice) {
-	const wordsPerHour = 250; // 2000 words / 8 h
-	const pricePerHour = wordsPerHour * wordPrice;
-	return '€ ' + pricePerHour.toFixed(2);
-}
-
-// Example input: 'Dutch', 1.30
-// Example output: '€ 50'
-export function getHourPriceFromLinePrice(langName, linePrice) {
-	// const linesPerHour = 27; // ca. 1500 Zeichen = Normseite
-	const linesPerHour = 33; // based on 250 words per hour
-	const pricePerHour = linesPerHour * linePrice;
-	return '€ ' + pricePerHour.toFixed(2);
-}
-
-//
-// TO LINE PRICES
-//
-
-// Example input: 'Dutch', 0.20
-// Example output: '€ 1.30 - € 1.40'
-export function getLinePriceRangeString(langName, wordPrice) {
-	const linePrices = calculateLinePrices(langName, wordPrice);
-	return getPriceString(linePrices);
-}
-
-// Calculates word prices based on language and wordPrice
-// Returns an array of prices
-var calculateLinePrices = function (langName, wordPrice) {
-	const stats = getStats(langName);
-	let linePriceArr = [];
-	let linePrice;
-	// Loop through all charPerWord values
-	stats.map(function (stats) {
-		const charsPerWord = stats.charsPerWord;
-		if (charsPerWord !== 0) {
-			linePrice = calculateLinePrice(wordPrice, charsPerWord);
-			linePriceArr.push(linePrice);
-		}
-	})
-	return linePriceArr;
-}
-
-//
-// TO WORD PRICES
-//
-
-// Example input: 'Dutch', 1,35
-// Example output: '€ 0.18 - € 0.20'
-export function getWordPriceRangeString (langName, linePrice) {
-	const wordPrices = calculateWordPrices(langName, linePrice);
-	return getPriceString(wordPrices);
-}
-
-// Calculates word prices based on language and linePrice
-// Returns an array of prices
-var calculateWordPrices = function (langName, linePrice) {
-	const stats = getStats(langName);
-	let wordPriceArr = [];
-	let wordPrice;
-	// Loop through all charPerWord values
-	stats.map(function (stats) {
-		const charsPerWord = stats.charsPerWord;
-		if (charsPerWord !== 0) {
-			wordPrice = calculateWordPrice(linePrice, charsPerWord);
-			wordPriceArr.push(wordPrice);
-		}
-	})
-	return wordPriceArr;
 }
 
 //
@@ -229,32 +170,44 @@ export function calculateWordsPerLine (charsPerWord) {
 	return 55 / charsPerWord;
 }
 
-// Example input: 1.30, 8
-// Example output: 0.20
-var calculateWordPrice = function (linePrice, charsPerWord) {
-	const wordPrice = linePrice * charsPerWord / 55;
-	return wordPrice;
-}
-
-//
-var calculateLinePrice = function (wordPrice, charsPerWord) {
-	const wordsPerLine = calculateWordsPerLine(charsPerWord);
-	const linePrice = wordsPerLine * wordPrice;
-	return linePrice;
-}
-
 // Input: langName (string)
 // Finds the index in the array for langName
 // Output: the array of chars per word from the language object at index
 export function getStats (langName) {
-	const language = getLanguage(langName);
+	const langIndex = languageData.findIndex((language) => language.name === langName);
+	const language = languageData[langIndex];
 	return language.stats;
 }
 
-// Parameter: langName (string)
-// Finds the index in the array for langName
-// Returns: the language object at index
-var getLanguage = function (langName) {
-	const langIndex = languageData.findIndex((language) => language.name === langName);
-	return languageData[langIndex];
+//
+// PRICEOPTIONS AND LANGUAGEDATE
+//
+//
+
+// Generates a list of price options for select input field
+export function generatePriceOptions(start, max, steps) {
+	let priceOptions = [];
+	for (let priceOption = start; priceOption <= max; priceOption += steps)
+		priceOptions.push(priceOption.toFixed(2));
+	return priceOptions;
+}
+
+// Returns languageData sorted alphabetically on language name
+export function getLanguageData() {
+	const languages = getSortedLanguageData();
+	return languages;
+}
+
+// Sorts languageData array on language name
+// Returns sorted array
+let getSortedLanguageData = function () {
+	let sortFunction = function (a, b) {
+		let nameA = a.name;
+		let nameB = b.name;
+		//sort string ascending
+		if (nameA < nameB) return -1
+		if (nameA > nameB) return 1
+		return 0 //default return value (no sorting)
+	};
+	return languageData.sort(sortFunction);
 }
