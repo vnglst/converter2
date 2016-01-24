@@ -36,7 +36,7 @@ export default class DetailsBox extends React.Component {
 						</tr>
 						<tr>
 							<td><sup>(2)</sup> <b>Assuming</b></td>
-							<td>2000 words per day (8 hours)</td>
+							<td>250 words per hour</td>
 						</tr>
 					</tfoot>
 				</Table>
