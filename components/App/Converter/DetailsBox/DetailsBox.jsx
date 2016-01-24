@@ -46,7 +46,7 @@ export default class DetailsBox extends React.Component {
 	renderRow = (data, i) => {
 		const source = data.source;
 		const charsPerWord = data.charsPerWord;
-		const wordsPerLine = converterUtils.calculateWordsPerLine(charsPerWord);
+		const wordsPerLine = 55 / charsPerWord;
 		const priceString = this.getPriceString(charsPerWord);
 		return (
 			<tr key={i}>

@@ -6,13 +6,13 @@ import languageData from './languageData.js';
 //
 
 // wordPrice -> linePrice
-var calculateWordPrice = function (linePrice, charsPerWord) {
+let calculateWordPrice = function (linePrice, charsPerWord) {
 	const wordPrice = linePrice * charsPerWord / 55;
 	return wordPrice;
 }
 
 // linePrice -> wordPrice
-var calculateLinePrice = function (wordPrice, charsPerWord) {
+let calculateLinePrice = function (wordPrice, charsPerWord) {
 	const wordsPerLine = calculateWordsPerLine(charsPerWord);
 	const linePrice = wordsPerLine * wordPrice;
 	return linePrice;
@@ -105,7 +105,7 @@ let average = function(arr) {
 }
 
 // Calculates word prices based on language and wordPrice returns an array of prices
-var calculateLinePrices = function (langName, wordPrice) {
+let calculateLinePrices = function (langName, wordPrice) {
 	const stats = getStats(langName);
 	let linePriceArr = [];
 	let linePrice;
@@ -166,7 +166,7 @@ export function getLinePriceString(wordPrice, charsPerWord) {
 
 // Example input: 8
 // Example output: 10
-export function calculateWordsPerLine (charsPerWord) {
+let calculateWordsPerLine = function (charsPerWord) {
 	return 55 / charsPerWord;
 }
 
