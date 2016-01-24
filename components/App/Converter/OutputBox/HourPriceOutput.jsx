@@ -47,7 +47,10 @@ export default class HourPriceOutput extends React.Component {
 	renderFromLinePrice = () => {
 		const langName = this.props.currentLang;
 		const linePrice = this.props.currentPrice;
-		const hourPriceString = converterUtils.getHourPriceFromLinePrice(langName, linePrice);
-		return hourPriceString;
+		const output = converterUtils.convertFromLinePrices({
+				langName: langName,
+				linePrice: linePrice
+			});
+		return output.hourPrice;
 	}
 }
