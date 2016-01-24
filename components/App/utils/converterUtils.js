@@ -49,23 +49,39 @@ let getPriceString = function (prices) {
 // convertFromLinePrices
 //
 
+let getAverageCharsPerWord = function(langName){
+	const stats = getStats(langName);
+	let charsArr = [];
+	// Loop through all charPerWord values
+	stats.map(function (stats) {
+		const charsPerWord = stats.charsPerWord;
+		if (charsPerWord !== 0) {
+			charsArr.push(charsPerWord);
+		}
+	})
+	return average(charsArr);
+}
+
 export function convertFromLinePrices(options) {
 	// Options
 	const langName = options.langName;
 	const linePrice = options.linePrice;
 	const charsPerPage = options.charsPerPage || 1500;
 	const charsPerLine = options.charsPerLine || 55;
-	const linesPerHour = options.linesPerHour || 30;
+	const wordsPerHour = options.wordsPerHour || 250;
 
 	// Conversions
 	const charsPrice = linePrice / charsPerLine;
 	const pagePrice = charsPrice * charsPerPage;
 	const wordPrice = calculateWordPrices(langName, linePrice);
-	const hourPrice = linesPerHour * linePrice;
+	const charsPerWord = getAverageCharsPerWord(langName);
+	const charsPerHour = wordsPerHour * charsPerWord;
+	const hourPrice = charsPerHour * charsPrice;
 
 	// Return object
 	return {
 		linePrice: linePrice,
+		charsPrice: priceToEuroString(charsPrice),
 		pagePrice: priceToEuroString(pagePrice),
 		wordPrice: priceToEuroString(wordPrice),
 		hourPrice: priceToEuroString(hourPrice)
@@ -76,6 +92,13 @@ export function convertFromLinePrices(options) {
 // convertFromWordPrices
 //
 
+let average = function(arr) {
+	var total = arr.reduce(function(a, b) {
+  return a + b;
+	});
+	return total / arr.length;
+}
+
 export function convertFromWordPrices(options) {
 	// Options
 	const langName = options.langName;
@@ -85,14 +108,16 @@ export function convertFromWordPrices(options) {
 	const wordsPerHour = options.wordsPerHour || 250;
 
 	// Conversions
-	// const charsPrice = linePrice / charsPerLine;
-	// const pagePrice = charsPrice * charsPerPage;
 	const linePrice = calculateLinePrices(langName, wordPrice);
+	const charsPrice = average(linePrice) / 55;
+	const pagePrice = charsPrice * charsPerPage;
 	const hourPrice = wordsPerHour * wordPrice;
 
 	// Return object
 	return {
 		wordPrice: wordPrice,
+		pagePrice: priceToEuroString(pagePrice),
+		charsPrice: priceToEuroString(charsPrice),
 		linePrice: priceToEuroString(linePrice),
 		hourPrice: priceToEuroString(hourPrice)
 	}

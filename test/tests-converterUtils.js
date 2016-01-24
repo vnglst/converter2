@@ -33,11 +33,16 @@ describe('converterUtils: convertFromLinePrices', () => {
     langName: 'Dutch',
     linePrice: 1.25,
     charsPerPage: 1500,
-    linesPerHour: 30
+    charsPerLine: 55,
+    wordsPerHour: 250
   });
 
   it('Should return a object', function() {
     expect(prices).to.be.a('object');
+    });
+
+  it('Checking charsPrice test value', function() {
+    expect(prices.charsPrice).to.equal('€ 0.02');
     });
 
   it('Checking pagePrice test value', function() {
@@ -49,7 +54,7 @@ describe('converterUtils: convertFromLinePrices', () => {
     });
 
   it('Checking hourPrice test value', function() {
-    expect(prices.hourPrice).to.equal('€ 37.50');
+    expect(prices.hourPrice).to.equal('€ 37.08');
     });
 });
 
@@ -61,6 +66,7 @@ describe('converterUtils: convertFromWordPrices', () => {
     langName: 'Dutch',
     wordPrice: 0.20,
     charsPerPage: 1500,
+    charsPerLine: 55,
     wordsPerHour: 250
   });
 
@@ -68,9 +74,13 @@ describe('converterUtils: convertFromWordPrices', () => {
     expect(prices).to.be.a('object');
     });
 
-  // it('Checking pagePrice test value', function() {
-  //   expect(prices.pagePrice).to.equal('€ 34.09');
-  //   });
+  it('Checking charsPrice test value', function() {
+    expect(prices.charsPrice).to.equal('€ 0.03');
+    });
+
+  it('Checking pagePrice test value', function() {
+    expect(prices.pagePrice).to.equal('€ 46.01');
+    });
 
   it('Checking linePrice test value', function() {
     expect(prices.linePrice).to.equal('€ 1.62 - € 1.77');
