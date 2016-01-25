@@ -164,8 +164,7 @@ export function getLinePriceString(wordPrice, charsPerWord) {
 	return euroPriceString;
 }
 
-// Example input: 8
-// Example output: 10
+// 
 let calculateWordsPerLine = function (charsPerWord) {
 	return 55 / charsPerWord;
 }
