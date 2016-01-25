@@ -31,7 +31,7 @@ export function priceToEuroString (price) {
 let getPriceString = function (prices) {
 	const maxPrice = Math.max.apply(Math, prices);
 	const minPrice = Math.min.apply(Math, prices);
-	return (maxPrice === minPrice) ? priceToEuroString(minPrice) : priceToEuroString(minPrice) + ' - ' + priceToEuroString(maxPrice);
+	return (maxPrice.toFixed(2) === minPrice.toFixed(2)) ? priceToEuroString(minPrice) : priceToEuroString(minPrice) + ' - ' + priceToEuroString(maxPrice);
 };
 
 //
@@ -164,7 +164,7 @@ export function getLinePriceString(wordPrice, charsPerWord) {
 	return euroPriceString;
 }
 
-// 
+//
 let calculateWordsPerLine = function (charsPerWord) {
 	return 55 / charsPerWord;
 }

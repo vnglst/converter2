@@ -28,13 +28,13 @@ describe('converterUtils: priceToEuroString(1.209)', () => {
 //
 // priceToEuroString TEST CASE 2
 //
-describe('converterUtils: priceToEuroString([1.209, 1.35, 0.999])', () => {
-	let price = converterUtils.priceToEuroString([1.209, 1.35, 0.999]);
-	it('Should return a string containing a - and 1.00 and 1.35 as a numbers', function () {
+describe('converterUtils: priceToEuroString([0.209, 0.035, 0.099])', () => {
+	let price = converterUtils.priceToEuroString([0.209, 0.035, 0.099]);
+	it('Should return a string containing a - and 0.10 and 0.21 as a numbers', function () {
 		expect(price).to.be.a('string');
 		expect(price).to.contain('-');
-		expect(price).to.contain('1.00');
-		expect(price).to.contain('1.35');
+		expect(price).to.contain('0.04');
+		expect(price).to.contain('0.21');
 	});
 });
 
