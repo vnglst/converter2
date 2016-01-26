@@ -7,14 +7,15 @@ import languageData from './languageData.js';
 
 // wordPrice -> linePrice
 let calculateWordPrice = function (linePrice, charsPerWord) {
-	const wordPrice = linePrice * charsPerWord / 55;
+	const pricePerChar = linePrice / 55;
+	const wordPrice = charsPerWord * pricePerChar;
 	return wordPrice;
 }
 
 // linePrice -> wordPrice
 let calculateLinePrice = function (wordPrice, charsPerWord) {
-	const wordsPerLine = calculateWordsPerLine(charsPerWord);
-	const linePrice = wordsPerLine * wordPrice;
+	const pricePerChar = wordPrice / charsPerWord;
+	const linePrice = pricePerChar * 55;
 	return linePrice;
 }
 
@@ -148,25 +149,18 @@ export function convertFromWordPrices(options) {
 // DETAILSBOX
 //
 
-// Example input: 1.35, 8
-// Example output: € 0.20
+//
 export function getWordPriceString(linePrice, charsPerWord) {
 	const wordPrice = calculateWordPrice(linePrice, charsPerWord);
 	const euroPriceString = priceToEuroString(wordPrice);
 	return euroPriceString;
 }
 
-// Example input: 0.20, 8
-// Example output: € 1.35
+//
 export function getLinePriceString(wordPrice, charsPerWord) {
 	const linePrice = calculateLinePrice(wordPrice, charsPerWord);
 	const euroPriceString = priceToEuroString(linePrice);
 	return euroPriceString;
-}
-
-//
-let calculateWordsPerLine = function (charsPerWord) {
-	return 55 / charsPerWord;
 }
 
 // Input: langName (string)
