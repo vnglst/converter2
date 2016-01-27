@@ -31,46 +31,6 @@ describe('converterUtils: getLinePriceString(0.15, 6.70)', () => {
 });
 
 //
-// priceToEuroString TEST CASE 1
-//
-describe('converterUtils: priceToEuroString(1.209)', () => {
-	let price = converterUtils.priceToEuroString(1.209);
-	it('Should return a string containing a € sign and 1.21 as a number', function () {
-		expect(price).to.be.a('string');
-		expect(price).to.contain('€');
-		expect(price).to.contain('1.21');
-	});
-});
-
-//
-// priceToEuroString TEST CASE 2
-//
-describe('converterUtils: priceToEuroString([0.209, 0.035, 0.099])', () => {
-	let price = converterUtils.priceToEuroString([0.209, 0.035, 0.099]);
-	it('Should return a string containing a - and 0.10 and 0.21 as a numbers', function () {
-		expect(price).to.be.a('string');
-		expect(price).to.contain('-');
-		expect(price).to.contain('0.04');
-		expect(price).to.contain('0.21');
-	});
-});
-
-//
-// priceToEuroString TEST CASE 3
-//
-describe('converterUtils: priceToEuroString([0.999, 1.001, 0.99998])', () => {
-	let price = converterUtils.priceToEuroString([0.999, 1.001, 0.99998]);
-	it('Should return a string containing a € sign and 1.00 as a number', function () {
-		expect(price).to.be.a('string');
-		expect(price).to.contain('€');
-		expect(price).to.contain('1.00');
-	});
-  it('Should not contain a -', function () {
-    expect(price).to.not.contain('-');
-  });
-});
-
-//
 // convertFromLinePrices
 //
 describe('converterUtils: convertFromLinePrices', () => {
