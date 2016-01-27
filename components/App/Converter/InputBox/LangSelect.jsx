@@ -1,12 +1,13 @@
 import React from 'react';
 import * as converterUtils from '../../utils/converterUtils.js';
+import LangModel from '../../utils/LangModel.js';
 
 export default class LangSelect extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 	render () {
-		const languageData = converterUtils.getLanguageData();
+		const languageData = LangModel.getAllLangData();
 		const langLabel = this.props.langLabel;
 		const currentLang = this.props.currentLang;
 		return (
