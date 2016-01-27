@@ -173,8 +173,7 @@ export function getStats (langName) {
 }
 
 //
-// PRICEOPTIONS AND LANGUAGEDATE
-//
+// PRICEOPTIONS
 //
 
 // Generates a list of price options for select input field

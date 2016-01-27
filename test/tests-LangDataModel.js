@@ -6,9 +6,8 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import LangModel from '../components/App/utils/LangModel.js';
 
-describe('LangDataModel: langModel.getAllLangData', () => {
-	const langModel = new LangModel();
-  const langData = langModel.getAllLangData();
+describe('LangModel: langModel.getAllLangData', () => {
+  const langData = LangModel.getAllLangData();
   const lastLanguage = langData.length - 1;
   it('Should be an array', function () {
 		expect(langData).to.be.a('array');
@@ -24,8 +23,7 @@ describe('LangDataModel: langModel.getAllLangData', () => {
 });
 
 describe('LangModel: langModel.getStats for German', () => {
-	const langModel = new LangModel();
-  const stats = langModel.getStats('German');
+  const stats = LangModel.getStats('German');
   it('Should be an array', function () {
     expect(stats).to.be.a('array');
     expect(stats).to.have.length(6);

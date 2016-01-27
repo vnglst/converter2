@@ -13,20 +13,21 @@ let sortLangData = function () {
 	return unsortedData.sort(sortFunction);
 }
 
-export default class {
-	constructor() {
-		this.langData = sortLangData();
-	}
+const langData = sortLangData();
 
-	getAllLangData() {
-		return this.langData;
-	}
+// Returns sorted langData
+let getAllLangData = function() {
+  return langData;
+}
 
-	// Return data for specific language depending on options
-	getStats(langName) {
-    const langData = this.langData;
-    const langIndex = langData.findIndex((lang) => lang.name === langName);
-  	const lang = langData[langIndex];
-  	return lang.stats;
-	}
+// Return data for specific language depending on options
+let getStats = function(langName) {
+  const langIndex = langData.findIndex((lang) => lang.name === langName);
+  const lang = langData[langIndex];
+  return lang.stats;
+}
+
+export default {
+  getAllLangData: getAllLangData,
+  getStats: getStats
 }
