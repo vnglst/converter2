@@ -4,6 +4,7 @@
 
 import React from 'react';
 import * as converterUtils from '../../utils/converterUtils.js';
+import LangModel from '../../utils/LangModel.js';
 import Table from 'react-bootstrap/lib/Table';
 import CollapsiblePanel from '../CollapsiblePanel.jsx';
 
@@ -13,7 +14,7 @@ export default class DetailsBox extends React.Component {
 	}
 	render () {
 		const currentLang = this.props.currentLang;
-		const stats = converterUtils.getStats(currentLang);
+		const stats = LangModel.getStats(currentLang);
 		const detailsPanelOpen = this.props.detailsPanelOpen;
 		const toUnit = this.props.toUnit;
 		return (
