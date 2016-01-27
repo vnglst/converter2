@@ -1,9 +1,10 @@
-import languageData from './languageData.js';
+import LangModel from './LangModel.js';
 
 //
-// GENERAL HELPER FUNCTIONS
+// GENERAL HELPER FUNCTIONS & VARIABLES
 //
-//
+
+let languageData = LangModel.getAllLangData();
 
 // wordPrice -> linePrice
 let calculateWordPrice = function (linePrice, charsPerWord) {
@@ -40,7 +41,7 @@ let getPriceString = function (prices) {
 //
 
 let getAverageCharsPerWord = function(langName){
-	const stats = getStats(langName);
+	const stats = LangModel.getStats(langName);
 	let charsArr = [];
 	// Loop through all charPerWord values
 	stats.map(function (stats) {
@@ -54,7 +55,7 @@ let getAverageCharsPerWord = function(langName){
 
 // Calculates word prices based on language and linePrice, return an array of prices
 let calculateWordPrices = function (langName, linePrice) {
-	const stats = getStats(langName);
+	const stats = LangModel.getStats(langName);
 	let wordPriceArr = [];
 	let wordPrice;
 	// Loop through all charPerWord values
@@ -107,7 +108,7 @@ let average = function(arr) {
 
 // Calculates word prices based on language and wordPrice returns an array of prices
 let calculateLinePrices = function (langName, wordPrice) {
-	const stats = getStats(langName);
+	const stats = LangModel.getStats(langName);
 	let linePriceArr = [];
 	let linePrice;
 	// Loop through all charPerWord values
@@ -163,15 +164,6 @@ export function getLinePriceString(wordPrice, charsPerWord) {
 	return euroPriceString;
 }
 
-// Input: langName (string)
-// Finds the index in the array for langName
-// Output: the array of chars per word from the language object at index
-export function getStats (langName) {
-	const langIndex = languageData.findIndex((language) => language.name === langName);
-	const language = languageData[langIndex];
-	return language.stats;
-}
-
 //
 // PRICEOPTIONS
 //
@@ -182,24 +174,4 @@ export function generatePriceOptions(start, max, steps) {
 	for (let priceOption = start; priceOption <= max; priceOption += steps)
 		priceOptions.push(priceOption.toFixed(2));
 	return priceOptions;
-}
-
-// Returns languageData sorted alphabetically on language name
-export function getLanguageData() {
-	const languages = getSortedLanguageData();
-	return languages;
-}
-
-// Sorts languageData array on language name
-// Returns sorted array
-let getSortedLanguageData = function () {
-	let sortFunction = function (a, b) {
-		let nameA = a.name;
-		let nameB = b.name;
-		//sort string ascending
-		if (nameA < nameB) return -1
-		if (nameA > nameB) return 1
-		return 0 //default return value (no sorting)
-	};
-	return languageData.sort(sortFunction);
 }
