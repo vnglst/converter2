@@ -4,21 +4,36 @@
 
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import LangDataModel from '../components/App/utils/LangDataModel.js';
+import LangModel from '../components/App/utils/LangModel.js';
 
-describe('LangDataModel: langModel.data', () => {
-	const langDataModel = new LangDataModel();
-  const data = langDataModel.data;
-  const lastLanguage = data.length - 1;
-	it('Should be an array', function () {
-		expect(data).to.be.a('array');
+describe('LangDataModel: langModel.getAllLangData', () => {
+	const langModel = new LangModel();
+  const langData = langModel.getAllLangData();
+  const lastLanguage = langData.length - 1;
+  it('Should be an array', function () {
+		expect(langData).to.be.a('array');
 	});
   it('First language should be Bulgarian', function () {
-    expect(data[0].name).to.be.a('string');
-    expect(data[0].name).to.contain('Bulgarian');
+    expect(langData[0].name).to.be.a('string');
+    expect(langData[0].name).to.contain('Bulgarian');
   });
   it('Last language in array should be Swedish', function () {
-    expect(data[lastLanguage].name).to.be.a('string');
-    expect(data[lastLanguage].name).to.contain('Swedish');
+    expect(langData[lastLanguage].name).to.be.a('string');
+    expect(langData[lastLanguage].name).to.contain('Swedish');
+  });
+});
+
+describe('LangModel: langModel.getStats for German', () => {
+	const langModel = new LangModel();
+  const stats = langModel.getStats('German');
+  it('Should be an array', function () {
+    expect(stats).to.be.a('array');
+    expect(stats).to.have.length(6);
+  });
+  it('First source should be Wolfram', function () {
+    expect(stats[0].source).to.contain('Wolfram');
+  });
+  it('First charsPerWord should be 7.26', function () {
+    expect(stats[0].charsPerWord).to.equal(7.26);
   });
 });
