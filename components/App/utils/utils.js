@@ -2,11 +2,11 @@
 // Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
 //
 
-export function store (namespace, data) {
-  // first check whether we are in the browser
-  // and not prerendering in Node env
-  const isBrowser = typeof window !== 'undefined';
-  if (!isBrowser) return false;
+export function store(namespace, data) {
+	// first check whether we are in the browser
+	// and not prerendering in Node env
+	const isBrowser = typeof window !== 'undefined';
+	if (!isBrowser) return false;
 
 	if (data) {
 		return localStorage.setItem(namespace, JSON.stringify(data));
@@ -18,7 +18,7 @@ export function store (namespace, data) {
 }
 
 // Rounds price to 2 decimals and adds euro sign
-export function priceToEuroString (price) {
+export function priceToEuroString(price) {
 	// if price is an array, return price range string
 	if (Array.isArray(price)) return getPriceString(price);
 	// else add euro sign and return
@@ -27,16 +27,16 @@ export function priceToEuroString (price) {
 }
 
 // Converts array with prices to price range string
-let getPriceString = function (prices) {
+const getPriceString = (prices) => {
 	const maxPrice = Math.max.apply(Math, prices);
 	const minPrice = Math.min.apply(Math, prices);
 	return (maxPrice.toFixed(2) === minPrice.toFixed(2)) ? priceToEuroString(minPrice) : priceToEuroString(minPrice) + ' - ' + priceToEuroString(maxPrice);
 };
 
 // Calculates and returns the average of an array
-export function average (arr) {
-	var total = arr.reduce(function(a, b) {
-  return a + b;
+export function average(arr) {
+	const total = arr.reduce(function (a, b) {
+		return a + b;
 	});
 	return total / arr.length;
 }

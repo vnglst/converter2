@@ -1,10 +1,11 @@
 import LangModel from './LangModel.js';
 import * as utils from './utils.js';
 
-let languageData = LangModel.getAllLangData();
+//
+const languageData = LangModel.getAllLangData();
 
 //
-let getCharsPerWordArr = function(langName) {
+const getCharsPerWordArr = function(langName) {
   const stats = LangModel.getStats(langName);
   const charsPerWordArr = stats.map ( obj => obj.charsPerWord)
   return charsPerWordArr;
@@ -49,32 +50,12 @@ export default class {
     this.wordsPerHour = wordsPerHour;
   }
 
-  getWordPrice = () => {
-    return utils.priceToEuroString(this.wordPrice);
-  }
-
-  getWordPriceRange = () => {
-    return utils.priceToEuroString(this.wordPriceArr);
-  }
-
-  getLinePrice = () => {
-    return utils.priceToEuroString(this.linePrice);
-  }
-
-  getLinePriceRange = () => {
-    return utils.priceToEuroString(this.linePriceArr);
-  }
-
-  getCharPrice = () => {
-    return utils.priceToEuroString(this.charPrice);
-  }
-
-  getHourPrice = () => {
-    return utils.priceToEuroString(this.hourPrice);
-  }
-
-  getPagePrice = () => {
-    return utils.priceToEuroString(this.pagePrice);
-  }
+  getWordPrice = () => utils.priceToEuroString(this.wordPrice);
+  getWordPriceRange = () => utils.priceToEuroString(this.wordPriceArr);
+  getLinePrice = () => utils.priceToEuroString(this.linePrice);
+  getLinePriceRange = () => utils.priceToEuroString(this.linePriceArr);
+  getCharPrice = () => utils.priceToEuroString(this.charPrice);
+  getHourPrice = () => utils.priceToEuroString(this.hourPrice);
+  getPagePrice = () => utils.priceToEuroString(this.pagePrice);
 
 }
