@@ -3,11 +3,10 @@
 //
 
 import React from 'react';
-import * as converterUtils from '../../utils/converterUtils.js';
-import * as utils from '../../utils/utils.js'
-import LangModel from '../../utils/LangModel.js';
 import Table from 'react-bootstrap/lib/Table';
 import CollapsiblePanel from '../CollapsiblePanel.jsx';
+import * as utils from '../../utils/utils';
+import LangModel from '../../utils/LangModel';
 
 export default class DetailsBox extends React.Component {
 	constructor(props) {
@@ -69,12 +68,12 @@ export default class DetailsBox extends React.Component {
 	}
 	getWordPriceString = (charsPerWord) => {
 		const linePrice = this.props.currentPrice;
-		const wordPriceString = converterUtils.getWordPriceString(linePrice, charsPerWord);
+		const wordPriceString = utils.getWordPriceString(linePrice, charsPerWord);
 		return wordPriceString;
 	}
 	getLinePriceString = (charsPerWord) => {
 		const wordPrice = this.props.currentPrice;
-		const linePriceString = converterUtils.getLinePriceString(wordPrice, charsPerWord);
+		const linePriceString = utils.getLinePriceString(wordPrice, charsPerWord);
 		return linePriceString;
 	}
 }

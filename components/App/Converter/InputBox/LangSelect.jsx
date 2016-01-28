@@ -1,5 +1,4 @@
 import React from 'react';
-import * as converterUtils from '../../utils/converterUtils.js';
 import LangModel from '../../utils/LangModel.js';
 
 export default class LangSelect extends React.Component {
