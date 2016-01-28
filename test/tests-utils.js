@@ -45,3 +45,18 @@ describe('utils: priceToEuroString([0.999, 1.001, 0.99998])', () => {
     expect(price).to.not.contain('-');
   });
 });
+
+//
+// generatePriceOptions
+//
+
+describe('utils: generatePriceOptions(0.90, 2.5, 0.05)', () => {
+	let priceOptions = utils.generatePriceOptions(0.90, 2.5, 0.05);
+	it('Should return an array with length > 5', function () {
+		expect(priceOptions).to.be.a('array');
+    expect(priceOptions).to.have.length.above(5);
+	});
+  it('First element should be a string 0.90', function () {
+    expect(priceOptions[0]).to.be.a('string');
+  });
+});
