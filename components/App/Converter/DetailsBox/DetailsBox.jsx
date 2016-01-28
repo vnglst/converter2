@@ -4,6 +4,7 @@
 
 import React from 'react';
 import * as converterUtils from '../../utils/converterUtils.js';
+import * as utils from '../../utils/utils.js'
 import LangModel from '../../utils/LangModel.js';
 import Table from 'react-bootstrap/lib/Table';
 import CollapsiblePanel from '../CollapsiblePanel.jsx';
