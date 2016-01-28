@@ -40,3 +40,11 @@ export function average (arr) {
 	});
 	return total / arr.length;
 }
+
+// Generates a list of price options for select input field
+export function generatePriceOptions(start, max, steps) {
+	let priceOptions = [];
+	for (let priceOption = start; priceOption <= max; priceOption += steps)
+		priceOptions.push(priceOption.toFixed(2));
+	return priceOptions;
+}

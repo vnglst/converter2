@@ -3,7 +3,7 @@
 //
 
 import React from 'react';
-import * as converterUtils from '../../utils/converterUtils';
+import * as utils from '../../utils/utils.js';
 
 export default class PriceSelect extends React.Component {
   constructor(props){
@@ -35,10 +35,10 @@ export default class PriceSelect extends React.Component {
     const fromUnit = this.props.fromUnit;
     switch (fromUnit){
       case 'word':
-        return converterUtils.generatePriceOptions(0.10, 0.45, 0.01);
+        return utils.generatePriceOptions(0.10, 0.45, 0.01);
         break;
       case 'line':
-        return converterUtils.generatePriceOptions(0.90, 2.5, 0.05);
+        return utils.generatePriceOptions(0.90, 2.5, 0.05);
         break;
     }
   }
@@ -49,7 +49,7 @@ export default class PriceSelect extends React.Component {
   _renderOption = (priceOption, i) => {
     return (
       <option key={i} value={priceOption} >
-        {converterUtils.priceToEuroString(priceOption)}
+        {utils.priceToEuroString(priceOption)}
       </option>
     )
   }
