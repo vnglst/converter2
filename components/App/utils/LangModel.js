@@ -1,7 +1,7 @@
 import unsortedData from './languageData.js';
 
 // Sorts array alphabetically on name property
-let sortLangData = function () {
+const sortLangData = () => {
 	let sortFunction = function (a, b) {
 		let nameA = a.name;
 		let nameB = b.name;
@@ -16,12 +16,10 @@ let sortLangData = function () {
 const langData = sortLangData();
 
 // Returns sorted langData
-let getAllLangData = function() {
-  return langData;
-}
+const getAllLangData = () => langData;
 
 // Return data for specific language depending on options
-let getStats = function(langName) {
+const getStats = (langName) => {
   const langIndex = langData.findIndex((lang) => lang.name === langName);
   const lang = langData[langIndex];
   return lang.stats;
