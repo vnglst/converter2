@@ -4,7 +4,6 @@
 
 import React from 'react';
 import PriceOutput from './PriceOutput.jsx';
-import HourPriceOutput from './HourPriceOutput.jsx';
 
 export default class OutputBox extends React.Component {
   constructor(props){
@@ -14,7 +13,6 @@ export default class OutputBox extends React.Component {
     return (
       <form className="form-horizontal well">
         <PriceOutput {...this.props} />
-        <HourPriceOutput {...this.props} />
       </form>
     )
   }

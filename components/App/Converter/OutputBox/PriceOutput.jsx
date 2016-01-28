@@ -4,6 +4,7 @@
 
 import React from 'react';
 import * as converterUtils from '../../utils/converterUtils.js';
+import PriceModel from '../../utils/PriceModel.js';
 
 export default class PriceOutput extends React.Component {
 	constructor(props) {
@@ -41,20 +42,15 @@ export default class PriceOutput extends React.Component {
 	renderLinePrice = () => {
 		const langName = this.props.currentLang;
 		const wordPrice = this.props.currentPrice;
-		const output = converterUtils.convertFromWordPrices({
-				langName: langName,
-				wordPrice: wordPrice
-			});
-		return output.linePrice;
-
+		const priceModel = new PriceModel(langName);
+		priceModel.setWordPrice(wordPrice);
+		return priceModel.getLinePriceRange();
 	}
 	renderWordPrice = () => {
 		const langName = this.props.currentLang;
 		const linePrice = this.props.currentPrice;
-		const output = converterUtils.convertFromLinePrices({
-				langName: langName,
-				linePrice: linePrice
-			});
-		return output.wordPrice;
+		const priceModel = new PriceModel(langName);
+		priceModel.setLinePrice(linePrice);
+		return priceModel.getWordPriceRange();
 	}
 }
