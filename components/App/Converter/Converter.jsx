@@ -6,7 +6,7 @@ import React from 'react';
 import InputBox from './InputBox/InputBox.jsx';
 import OutputBox from './OutputBox/OutputBox.jsx';
 import DetailsBox from './DetailsBox/DetailsBox.jsx';
-import * as utils from '../utils/utils.js';
+import store from '../utils/LocalStorage';
 
 export default class Converter extends React.Component {
   constructor(props) {
@@ -24,14 +24,14 @@ export default class Converter extends React.Component {
     };
 
     this.storageName = 'localStorage' + fromUnit + 'to' + toUnit;
-    const storedState = utils.store(this.storageName);
+    const storedState = store(this.storageName);
     // storedState is "false" if empty OR environment != browser
     this.state = storedState || defaultState;
   }
 
   componentDidUpdate () {
     // Store new state in localStorage
-    utils.store(this.storageName, this.state);
+    store(this.storageName, this.state);
   }
   _openPanel = () => {
     this.setState({

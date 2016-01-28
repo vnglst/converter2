@@ -1,3 +1,7 @@
+//
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
+
 import unsortedData from './languageData.js';
 
 // Sorts array alphabetically on name property
