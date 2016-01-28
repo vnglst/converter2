@@ -33,3 +33,23 @@ export function generatePriceOptions(start, max, steps) {
 		priceOptions.push(priceOption.toFixed(2));
 	return priceOptions;
 }
+
+//
+// DETAILSBOX
+//
+
+//
+export function getWordPriceString(linePrice, charsPerWord) {
+	const charPrice = linePrice / 55;
+	const wordPrice = charsPerWord * charPrice;
+	const euroPriceString = priceToEuroString(wordPrice);
+	return euroPriceString;
+}
+
+//
+export function getLinePriceString(wordPrice, charsPerWord) {
+	const charPrice = wordPrice / charsPerWord;
+	const linePrice = charPrice * 55;
+	const euroPriceString = priceToEuroString(linePrice);
+	return euroPriceString;
+}
