@@ -6,12 +6,9 @@ import React from 'react';
 import * as utils from '../../utils/utils.js';
 
 export default class PriceSelect extends React.Component {
-  constructor(props){
-    super(props);
-  }
   render() {
-    const priceOptions = this.getPriceOptions();
-    const priceLabel = 'Rate per '+this.props.fromUnit;
+    const priceOptions = this.props.priceOptions;
+    const priceLabel = this.props.priceLabel
     const currentPrice = this.props.currentPrice;
     return (
       <div className="form-group">
@@ -30,17 +27,6 @@ export default class PriceSelect extends React.Component {
         </div>
       </div>
     )
-  }
-  getPriceOptions = () => {
-    const fromUnit = this.props.fromUnit;
-    switch (fromUnit){
-      case 'word':
-        return utils.generatePriceOptions(0.10, 0.45, 0.01);
-        break;
-      case 'line':
-        return utils.generatePriceOptions(0.90, 2.5, 0.05);
-        break;
-    }
   }
   _changePrice = () => {
     const price = this.refs.price.value;
