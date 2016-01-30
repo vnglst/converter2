@@ -4,6 +4,10 @@
 
 import React from 'react';
 import InputBox from './InputBox/InputBox.jsx';
+import LangSelect from './InputBox/LangSelect.jsx';
+import WordPriceSelect from './InputBox/WordPriceSelect.jsx';
+import LinePriceSelect from './InputBox/LinePriceSelect.jsx';
+
 import OutputBox from './OutputBox/OutputBox.jsx';
 import DetailsBox from './DetailsBox/DetailsBox.jsx';
 import store from '../utils/LocalStorage';
@@ -44,10 +48,19 @@ export default class Converter extends React.Component {
   _changeLang = (lang) => {
     this.setState({currentLang: lang});
   }
+  getPriceSelect = () => {
+    const fromUnit = this.props.fromUnit;
+    if (fromUnit === 'word') return <WordPriceSelect {...this.state} onPriceChange={this._changePrice} onLangChange={this._changeLang} />
+    if (fromUnit === 'line') return <LinePriceSelect {...this.state} onPriceChange={this._changePrice} onLangChange={this._changeLang} />
+  }
 	render () {
 		return(
 			<div>
-				<InputBox {...this.state} onPriceChange={this._changePrice} onLangChange={this._changeLang}/>
+				<InputBox >
+          {this.getPriceSelect()}
+          <LangSelect {...this.state} langLabel="Source language"/>
+        </InputBox>
+
 				<OutputBox {...this.state}/>
 				<DetailsBox {...this.state} onPanelOpen={this._openPanel}/>
 			</div>
