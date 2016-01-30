@@ -9,9 +9,6 @@ import * as utils from '../../utils/utils';
 import LangModel from '../../utils/LangModel';
 
 export default class DetailsBox extends React.Component {
-	constructor(props) {
-		super(props);
-	}
 	render () {
 		const currentLang = this.props.currentLang;
 		const stats = LangModel.getStats(currentLang);
