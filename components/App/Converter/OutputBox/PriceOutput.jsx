@@ -6,9 +6,6 @@ import React from 'react';
 import PriceModel from '../../utils/PriceModel.js';
 
 export default class PriceOutput extends React.Component {
-	constructor(props) {
-		super(props)
-	}
 	render () {
 		const priceString = this.renderPrice();
 		const priceLabel = 'Rate per '+this.props.toUnit;
