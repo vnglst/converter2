@@ -7,8 +7,8 @@ import PriceModel from '../../utils/PriceModel.js';
 
 export default class PriceOutput extends React.Component {
 	render () {
-		const priceString = this.renderPrice();
-		const priceLabel = 'Rate per '+this.props.toUnit;
+		const priceString = this.props.renderPrice();
+		const priceLabel = this.props.priceLabel
 		return(
 			<div className="form-group">
 				<label className="col-sm-3 control-label" htmlFor="priceSpan">
@@ -21,32 +21,5 @@ export default class PriceOutput extends React.Component {
 				</div>
 			</div>
 		)
-	}
-	renderPrice = () => {
-		const fromUnit = this.props.fromUnit;
-		switch (fromUnit){
-			case 'word':
-				return this.renderLinePrice();
-				break;
-			case 'line':
-				return this.renderWordPrice();
-				break;
-			default:
-				return 'Unit not recognized'
-		}
-	}
-	renderLinePrice = () => {
-		const langName = this.props.currentLang;
-		const wordPrice = this.props.currentPrice;
-		const priceModel = new PriceModel(langName);
-		priceModel.setWordPrice(wordPrice);
-		return priceModel.getLinePriceRange();
-	}
-	renderWordPrice = () => {
-		const langName = this.props.currentLang;
-		const linePrice = this.props.currentPrice;
-		const priceModel = new PriceModel(langName);
-		priceModel.setLinePrice(linePrice);
-		return priceModel.getWordPriceRange();
 	}
 }
