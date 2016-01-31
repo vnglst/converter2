@@ -60,9 +60,10 @@ export default class Converter extends React.Component {
           {this.getPriceSelect()}
           <LangSelect {...this.state} onLangChange={this._changeLang} langLabel="Source language"/>
         </InputBox>
-
 				<OutputBox {...this.state}/>
-				<DetailsBox {...this.state} onPanelOpen={this._openPanel}/>
+        {/*
+        <DetailsBox {...this.state} onPanelOpen={this._openPanel}/>
+        */}
 			</div>
 		)
 	}
