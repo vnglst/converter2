@@ -50,15 +50,15 @@ export default class Converter extends React.Component {
   }
   getPriceSelect = () => {
     const fromUnit = this.props.fromUnit;
-    if (fromUnit === 'word') return <WordPriceSelect {...this.state} onPriceChange={this._changePrice} onLangChange={this._changeLang} />
-    if (fromUnit === 'line') return <LinePriceSelect {...this.state} onPriceChange={this._changePrice} onLangChange={this._changeLang} />
+    if (fromUnit === 'word') return <WordPriceSelect {...this.state} onPriceChange={this._changePrice}  />
+    if (fromUnit === 'line') return <LinePriceSelect {...this.state} onPriceChange={this._changePrice} />
   }
 	render () {
 		return(
 			<div>
 				<InputBox >
           {this.getPriceSelect()}
-          <LangSelect {...this.state} langLabel="Source language"/>
+          <LangSelect {...this.state} onLangChange={this._changeLang} langLabel="Source language"/>
         </InputBox>
 
 				<OutputBox {...this.state}/>
