@@ -7,7 +7,6 @@ import './App.scss';
 import Tab from 'react-bootstrap/lib/Tab';
 import Tabs from 'react-bootstrap/lib/Tabs';
 import Converter from './Converter/Converter.jsx';
-import logoSource from './img/logo-vangilst.png';
 
 export default class App extends React.Component {
 	constructor(props) {
