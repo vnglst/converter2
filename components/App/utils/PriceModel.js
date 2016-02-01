@@ -27,6 +27,13 @@ export default class {
     this.linePrice = this.charPrice * this.charsPerLine;
   }
 
+  setLang = (langName) => {
+    this.langName = langName;
+    // How to update when fromWordPrice
+    this.setCharPrice(this.charPrice);
+    console.log(this.getWordPriceRange());
+  }
+
   setCharPrice = (charPrice) => {
     this.charPrice = charPrice;
     this.wordPriceArr = this.charsPerWordArr.map( charsPerWord => charsPerWord * charPrice );
@@ -50,6 +57,7 @@ export default class {
     this.wordsPerHour = wordsPerHour;
   }
 
+  getLang = () => this.langName;
   getWordPrice = () => utils.priceToEuroString(this.wordPrice);
   getWordPriceRange = () => utils.priceToEuroString(this.wordPriceArr);
   getLinePrice = () => utils.priceToEuroString(this.linePrice);

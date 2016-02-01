@@ -8,7 +8,7 @@ export default class LangSelect extends React.Component {
 	render () {
 		const languageData = LangModel.getAllLangData();
 		const langLabel = this.props.langLabel;
-		const currentLang = this.props.currentLang;
+		const currentLang = this.props.fromLinePrice.getLang();
 		return (
 			<div className="form-group">
 				<label className="col-sm-3 control-label" htmlFor="langSelect">

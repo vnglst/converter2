@@ -21,10 +21,7 @@ export default class WordPriceOutput extends React.Component {
 	// 	return priceModel.getLinePriceRange();
 	// }
 	renderWordPrice = () => {
-		const langName = this.props.currentLang;
-		const linePrice = this.props.currentPrice;
-		const priceModel = new PriceModel(langName);
-		priceModel.setLinePrice(linePrice);
-		return priceModel.getWordPriceRange();
+		const fromLinePrice = this.props.fromLinePrice;
+		return fromLinePrice.getWordPriceRange();
 	}
 }
