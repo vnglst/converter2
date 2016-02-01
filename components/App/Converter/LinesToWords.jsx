@@ -15,8 +15,8 @@ export default class Converter extends React.Component {
 		return(
 			<div>
 				<InputBox >
-          <LinePriceSelect {...this.props} onPriceChange={this._changePrice} />
-          <LangSelect {...this.props} onLangChange={this._changeLang} langLabel="Source language"/>
+          <LinePriceSelect {...this.props} />
+          <LangSelect {...this.props} onLangChange={this.props._changeLang} langLabel="Source language"/>
         </InputBox>
 				<OutputBox {...this.props}/>
         {/*
