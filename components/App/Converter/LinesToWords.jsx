@@ -5,7 +5,6 @@
 import React from 'react';
 import InputBox from './InputBox/InputBox.jsx';
 import LangSelect from './InputBox/LangSelect.jsx';
-import WordPriceSelect from './InputBox/WordPriceSelect.jsx';
 import LinePriceSelect from './InputBox/LinePriceSelect.jsx';
 import OutputBox from './OutputBox/OutputBox.jsx';
 import DetailsBox from './DetailsBox/DetailsBox.jsx';

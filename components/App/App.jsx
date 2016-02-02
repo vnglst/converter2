@@ -39,7 +39,7 @@ export default class App extends React.Component {
 	_changeLinePrice = (linePrice) => {
 		const fromLinePrice = this.state.fromLinePrice;
 		fromLinePrice.setLinePrice(linePrice);
-		this.setState({fromLinePrice: fromLinePrice});
+		this.setState({ fromLinePrice });
 	}
 	_changeLang = (langName) => {
 		const linePrice = this.state.fromLinePrice.linePrice;

@@ -2,9 +2,6 @@ import React from 'react';
 import LangModel from '../../utils/LangModel.js';
 
 export default class LangSelect extends React.Component {
-	constructor(props) {
-		super(props);
-	}
 	render () {
 		const languageData = LangModel.getAllLangData();
 		const langLabel = this.props.langLabel;
