@@ -13,8 +13,10 @@ import PriceModel from './utils/PriceModel.js';
 export default class App extends React.Component {
 	constructor(props) {
 		super(props);
-		const fromLinePrice = new PriceModel('German');
-		fromLinePrice.setLinePrice(1.35);
+		const fromLinePrice = new PriceModel({
+			langName: 'German',
+			linePrice: 1.35
+		});
 		const defaultState = {
 			fromLinePrice: fromLinePrice,
 			detailsPanelOpen: false
@@ -42,10 +44,9 @@ export default class App extends React.Component {
 		this.setState({ fromLinePrice });
 	}
 	_changeLang = (langName) => {
-		const linePrice = this.state.fromLinePrice.linePrice;
-		const newFromLinePrice = new PriceModel(langName);
-		newFromLinePrice.setLinePrice(linePrice);
-		this.setState({fromLinePrice: newFromLinePrice});
+		const fromLinePrice = this.state.fromLinePrice;
+		fromLinePrice.setLang(langName);
+		this.setState({ fromLinePrice });
 	}
 	render () {
 		return (
