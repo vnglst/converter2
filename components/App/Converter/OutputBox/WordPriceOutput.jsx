@@ -15,6 +15,6 @@ export default class WordPriceOutput extends React.Component {
 	}
 	renderWordPrice = () => {
 		const fromLinePrice = this.props.fromLinePrice;
-		return fromLinePrice.getWordPriceRange();
+		return fromLinePrice.getWordPriceStr();
 	}
 }

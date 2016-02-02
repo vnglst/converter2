@@ -1,44 +1,52 @@
 import LangModel from './LangModel.js';
 import * as utils from './utils.js';
 
-//
 const languageData = LangModel.getAllLangData();
 
-//
+// Retrieves the array of characters per word for certain language
 const getCharsPerWordArr = function(langName) {
   const stats = LangModel.getStats(langName);
   const charsPerWordArr = stats.map ( obj => obj.charsPerWord)
   return charsPerWordArr;
 }
 
-export default class {
-  constructor(langName) {
-    this.langName = langName;
-    this.charsPerWordArr = getCharsPerWordArr(this.langName);
-    this.charsPerWord = utils.average(this.charsPerWordArr);
-    this.charsPerLine = 55;
-    this.wordsPerHour = 250;
-    this.charsPerPage = 1500;
-  }
+// Calculates average wordPrice
+const calcWordPrice = function(langName, charPrice) {
+  const charsPerWordArr = getCharsPerWordArr(langName);
+  const charsPerLine = utils.average(charsPerWordArr);
+  const wordPriceArr = charsPerWordArr.map(charsPerWord => charsPerWord * charPrice);
+  const wordPrice = utils.average(wordPriceArr);
+  return wordPrice;
+}
 
-  update = () => {
-    this.pagePrice = this.charPrice * this.charsPerPage;
-    this.hourPrice = this.wordPrice * this.wordsPerHour;
-    this.linePrice = this.charPrice * this.charsPerLine;
+// Calculated average charPrice
+const calcCharPrice = function(langName, wordPrice){
+  const charsPerWordArr = getCharsPerWordArr(langName);
+  const charPriceArr = charsPerWordArr.map(charsPerWord => wordPrice / charsPerWord);
+  const charPrice = utils.average(charPriceArr);
+  return charPrice;
+}
+
+export default class {
+  constructor(options) {
+    // Defaults
+    this.charsPerLine = 55;
+
+    // Options
+    this.langName = options.langName;
+    options.linePrice && this.setLinePrice(options.linePrice);
+    options.wordPrice && this.setWordPrice(options.wordPrice);
   }
 
   setLang = (langName) => {
     this.langName = langName;
-    // How to update when fromWordPrice
     this.setCharPrice(this.charPrice);
-    console.log(this.getWordPriceRange());
   }
 
   setCharPrice = (charPrice) => {
     this.charPrice = charPrice;
-    this.wordPriceArr = this.charsPerWordArr.map( charsPerWord => charsPerWord * charPrice );
-    this.wordPrice = utils.average(this.wordPriceArr);
-    this.update();
+    this.wordPrice = calcWordPrice(this.langName, this.charPrice);
+    this.linePrice = this.charPrice * this.charsPerLine;
   }
 
   setLinePrice = (linePrice) => {
@@ -46,24 +54,12 @@ export default class {
   }
 
   setWordPrice = (wordPrice) => {
-    this.wordPrice = wordPrice;
-    this.charPriceArr = this.charsPerWordArr.map( charsPerWord => wordPrice / charsPerWord );
-    this.linePriceArr = this.charPriceArr.map( chars => chars * this.charsPerLine );
-    this.charPrice = utils.average(this.charPriceArr);
-    this.update();
+    const charPrice = calcCharPrice(this.langName, wordPrice);
+    this.setCharPrice(charPrice);
   }
 
-  setWordsPerHour = (wordsPerHour) => {
-    this.wordsPerHour = wordsPerHour;
-  }
-
-  getLang = () => this.langName;
-  getWordPrice = () => utils.priceToEuroString(this.wordPrice);
-  getWordPriceRange = () => utils.priceToEuroString(this.wordPriceArr);
-  getLinePrice = () => utils.priceToEuroString(this.linePrice);
-  getLinePriceRange = () => utils.priceToEuroString(this.linePriceArr);
-  getCharPrice = () => utils.priceToEuroString(this.charPrice);
-  getHourPrice = () => utils.priceToEuroString(this.hourPrice);
-  getPagePrice = () => utils.priceToEuroString(this.pagePrice);
-
+  getLangStr = () => this.langName;
+  getWordPriceStr = () => utils.priceToEuroString(this.wordPrice);
+  getLinePriceStr = () => utils.priceToEuroString(this.linePrice);
+  getCharPriceStr = () => utils.priceToEuroString(this.charPrice);
 }
