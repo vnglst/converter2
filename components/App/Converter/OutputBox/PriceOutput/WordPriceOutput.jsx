@@ -13,7 +13,6 @@ export default class WordPriceOutput extends React.Component {
 		)
 	}
 	renderWordPrice = () => {
-		const fromLinePrice = this.props.fromLinePrice;
-		return fromLinePrice.getWordPriceStr();
+		return this.props.priceModel.getWordPriceStr();
 	}
 }
