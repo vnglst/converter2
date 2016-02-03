@@ -1,4 +1,4 @@
-// 
+//
 // Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
 //
 
@@ -34,7 +34,8 @@ const calcCharPrice = function(langName, wordPrice){
 export default class {
   constructor(options) {
     // Defaults
-    this.charsPerLine = 55;
+    this.charsPerLine = options.charsPerLine || 55;
+    this.charsPerPage = options.charsPerPage || 1500;
 
     // Options
     this.sourceLang = options.sourceLang;
@@ -51,6 +52,7 @@ export default class {
     this.charPrice = charPrice;
     this.wordPrice = calcWordPrice(this.sourceLang, this.charPrice);
     this.linePrice = this.charPrice * this.charsPerLine;
+    this.pagePrice = this.charPrice * this.charsPerPage;
   }
 
   setLinePrice = (linePrice) => {
@@ -68,4 +70,5 @@ export default class {
   getWordPriceStr = () => utils.priceToEuroString(this.wordPrice);
   getLinePriceStr = () => utils.priceToEuroString(this.linePrice);
   getCharPriceStr = () => utils.priceToEuroString(this.charPrice);
+  getPagePriceStr = () => utils.priceToEuroString(this.pagePrice);
 }

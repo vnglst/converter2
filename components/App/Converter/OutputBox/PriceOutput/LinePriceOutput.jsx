@@ -7,12 +7,12 @@ import PriceOutput from './PriceOutput.jsx';
 
 export default class LinePriceOutput extends React.Component {
 	render () {
-		const priceLabel = 'Rate per line';
+		const priceLabel = 'Per line';
 		return(
-			<PriceOutput {...this.props} renderPrice={this.renderLinePrice} priceLabel={priceLabel} />
+			<PriceOutput {...this.props} renderPrice={this.renderPrice} priceLabel={priceLabel} />
 		)
 	}
-	renderLinePrice = () => {
+	renderPrice = () => {
 		return this.props.priceModel.getLinePriceStr();
 	}
 }

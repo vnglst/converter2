@@ -7,12 +7,12 @@ import PriceOutput from './PriceOutput.jsx';
 
 export default class WordPriceOutput extends React.Component {
 	render () {
-		const priceLabel = 'Rate per word';
+		const priceLabel = 'Per word';
 		return(
-			<PriceOutput {...this.props} renderPrice={this.renderWordPrice} priceLabel={priceLabel} />
+			<PriceOutput {...this.props} renderPrice={this.renderPrice} priceLabel={priceLabel} />
 		)
 	}
-	renderWordPrice = () => {
+	renderPrice = () => {
 		return this.props.priceModel.getWordPriceStr();
 	}
 }
