@@ -11,7 +11,7 @@ export default class PriceOutput extends React.Component {
 		return(
 			<div className="form-group">
 				<label className="col-sm-3 control-label" htmlFor="priceSpan">
-					{priceLabel}<sup> (1)</sup>
+					{priceLabel}
 				</label>
 				<div className="col-sm-9">
 					<span className="form-control" id="priceSpan" readOnly>

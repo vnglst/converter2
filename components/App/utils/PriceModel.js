@@ -1,3 +1,7 @@
+// 
+// Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
+//
+
 import LangModel from './LangModel.js';
 import * as utils from './utils.js';
 
@@ -59,6 +63,7 @@ export default class {
   }
 
   getLinePrice = () => this.linePrice.toFixed(2);
+  getWordPrice = () => this.wordPrice.toFixed(2);
   getSourceLangStr = () => this.sourceLang;
   getWordPriceStr = () => utils.priceToEuroString(this.wordPrice);
   getLinePriceStr = () => utils.priceToEuroString(this.linePrice);
