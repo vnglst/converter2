@@ -3,6 +3,8 @@
 //
 
 import React from 'react';
+import Panel from 'react-bootstrap/lib/Panel';
+import Accordion from 'react-bootstrap/lib/Accordion';
 
 import store from '../utils/LocalStorage.js';
 import LangModel from '../utils/LangModel.js';
@@ -13,6 +15,7 @@ import SourceLangSelect from './InputBox/LangSelect/SourceLangSelect.jsx';
 import WordPriceSelect from './InputBox/PriceSelect/WordPriceSelect.jsx';
 
 import OutputBox from './OutputBox/OutputBox.jsx';
+import MoreOutputBox from './OutputBox/MoreOutputBox.jsx';
 import LinePriceOutput from './OutputBox/PriceOutput/LinePriceOutput.jsx';
 import PagePriceOutput from './OutputBox/PriceOutput/PagePriceOutput.jsx';
 
@@ -57,8 +60,21 @@ export default class WordsToLines extends React.Component {
         </InputBox>
 				<OutputBox>
 					<LinePriceOutput {...this.state} />
-					<PagePriceOutput {...this.state} />
 				</OutputBox>
+
+				<Accordion>
+					<Panel header="Other rates" eventKey="1">
+						<MoreOutputBox>
+							<PagePriceOutput {...this.state} />
+							<PagePriceOutput {...this.state} />
+							<PagePriceOutput {...this.state} />
+						</MoreOutputBox>
+					</Panel>
+					<Panel header="Assumptions" eventKey="2">
+					</Panel>
+					<Panel header="Details" eventKey="3">
+					</Panel>
+				</Accordion>
 			</div>
 		)
 	}
