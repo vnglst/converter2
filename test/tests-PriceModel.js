@@ -29,9 +29,9 @@ describe('Create a new PriceModel: German, 1.25 linePrice', () => {
   //   expect(priceModelGerman.getHourPrice()).to.equal('€ 42.42');
   // });
 
-  // it('Checking pagePrice = € 34.09', function () {
-  //   expect(priceModelGerman.getPagePrice()).to.equal('€ 34.09');
-  // });
+  it('Checking pagePrice = € 34.09', function () {
+    expect(priceModelGerman.getPagePriceStr()).to.equal('€ 34.09');
+  });
 
 });
 
@@ -48,9 +48,9 @@ describe('Create a new PriceModel: Dutch, 0.20 wordPrice', () => {
 		expect(priceModelDutch.getLinePriceStr()).to.equal('€ 1.69');
 	});
 
-  // it('Checking pagePrice = € 46.01', function () {
-  // 	expect(priceModelDutch.getPagePriceStr()).to.equal('€ 46.01');
-  // });
+  it('Checking pagePrice = € 46.01', function () {
+  	expect(priceModelDutch.getPagePriceStr()).to.equal('€ 46.01');
+  });
 
 	// it('Checking hourPrice = € 50.00', function () {
 	// 	expect(priceModelDutch.getHourPrice()).to.equal('€ 50.00');
