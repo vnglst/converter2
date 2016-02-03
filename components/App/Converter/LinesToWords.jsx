@@ -7,7 +7,7 @@ import InputBox from './InputBox/InputBox.jsx';
 import SourceLangSelect from './InputBox/LangSelect/SourceLangSelect.jsx';
 import LinePriceSelect from './InputBox/PriceSelect/LinePriceSelect.jsx';
 import OutputBox from './OutputBox/OutputBox.jsx';
-import DetailsBox from './DetailsBox/DetailsBox.jsx';
+import WordPriceOutput from './OutputBox/PriceOutput/WordPriceOutput.jsx';
 
 export default class Converter extends React.Component {
 	render () {
@@ -18,7 +18,9 @@ export default class Converter extends React.Component {
           <LinePriceSelect {...this.props} />
           <SourceLangSelect {...this.props} currentLang={currentLang} />
         </InputBox>
-				<OutputBox {...this.props}/>
+				<OutputBox {...this.props}>
+					<WordPriceOutput {...this.props} />
+				</OutputBox>
 			</div>
 		)
 	}

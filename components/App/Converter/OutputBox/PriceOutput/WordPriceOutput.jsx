@@ -3,7 +3,6 @@
 //
 
 import React from 'react';
-import PriceModel from '../../utils/PriceModel.js';
 import PriceOutput from './PriceOutput.jsx';
 
 export default class WordPriceOutput extends React.Component {
