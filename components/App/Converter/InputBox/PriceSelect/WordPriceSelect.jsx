@@ -3,16 +3,16 @@
 //
 
 import React from 'react';
-import * as utils from '../../utils/utils.js';
+import * as utils from '../../../utils/utils.js';
 import PriceSelect from './PriceSelect.jsx';
 
 export default class WordPriceSelect extends React.Component {
   render() {
     const priceOptions = utils.generatePriceOptions(0.10, 0.45, 0.01);
     const priceLabel = 'Rate per word';
-    const currentPrice = this.props.currentPrice;
+    const currentPrice = this.props.priceModel.getWordPrice();
     return (
-      <PriceSelect {...this.props} priceLabel={priceLabel} priceOptions={priceOptions} />
+      <PriceSelect {...this.props} onPriceChange={this.props._changeWordPrice} priceLabel={priceLabel} priceOptions={priceOptions} currentPrice={currentPrice}/>
     )
   }
 }
