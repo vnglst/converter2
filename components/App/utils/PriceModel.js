@@ -33,19 +33,19 @@ export default class {
     this.charsPerLine = 55;
 
     // Options
-    this.langName = options.langName;
+    this.sourceLang = options.sourceLang;
     options.linePrice && this.setLinePrice(options.linePrice);
     options.wordPrice && this.setWordPrice(options.wordPrice);
   }
 
-  setLang = (langName) => {
-    this.langName = langName;
+  setSourceLang = (langName) => {
+    this.sourceLang = langName;
     this.setCharPrice(this.charPrice);
   }
 
   setCharPrice = (charPrice) => {
     this.charPrice = charPrice;
-    this.wordPrice = calcWordPrice(this.langName, this.charPrice);
+    this.wordPrice = calcWordPrice(this.sourceLang, this.charPrice);
     this.linePrice = this.charPrice * this.charsPerLine;
   }
 
@@ -54,11 +54,12 @@ export default class {
   }
 
   setWordPrice = (wordPrice) => {
-    const charPrice = calcCharPrice(this.langName, wordPrice);
+    const charPrice = calcCharPrice(this.sourceLang, wordPrice);
     this.setCharPrice(charPrice);
   }
 
-  getLangStr = () => this.langName;
+  getLinePrice = () => this.linePrice.toFixed(2);
+  getSourceLangStr = () => this.sourceLang;
   getWordPriceStr = () => utils.priceToEuroString(this.wordPrice);
   getLinePriceStr = () => utils.priceToEuroString(this.linePrice);
   getCharPriceStr = () => utils.priceToEuroString(this.charPrice);

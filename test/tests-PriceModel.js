@@ -9,7 +9,7 @@ import PriceModel from '../components/App/utils/PriceModel.js';
 
 describe('Create a new PriceModel: German, 1.25 linePrice', () => {
   const priceModelGerman = new PriceModel({
-    langName: 'German',
+    sourceLang: 'German',
     linePrice: 1.25
   });
 
@@ -37,7 +37,7 @@ describe('Create a new PriceModel: German, 1.25 linePrice', () => {
 
 describe('Create a new PriceModel: Dutch, 0.20 wordPrice', () => {
   const priceModelDutch = new PriceModel({
-    langName: 'Dutch',
+    sourceLang: 'Dutch',
     wordPrice: 0.20
   });
   it('Checking charsPrice = € 0.03', function () {
