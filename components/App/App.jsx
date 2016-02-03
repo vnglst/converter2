@@ -1,7 +1,6 @@
 //
 // Copyright (c) 2016 by Koen van Gilst (@vnglst) | MIT license
 //
-
 import React from 'react';
 import './App.scss';
 import Tab from 'react-bootstrap/lib/Tab';
@@ -9,6 +8,7 @@ import Tabs from 'react-bootstrap/lib/Tabs';
 import LinesToWords from './Converter/LinesToWords.jsx';
 import store from './utils/LocalStorage.js';
 import PriceModel from './utils/PriceModel.js';
+import LangModel from './utils/LangModel.js';
 
 export default class App extends React.Component {
 	constructor(props) {
@@ -43,27 +43,19 @@ export default class App extends React.Component {
 		fromLinePrice.setLinePrice(linePrice);
 		this.setState({ fromLinePrice });
 	}
-	_changeLang = (langName) => {
+	_changeSourceLang = (langName) => {
 		const fromLinePrice = this.state.fromLinePrice;
 		fromLinePrice.setLang(langName);
 		this.setState({ fromLinePrice });
 	}
 	render () {
+		const languageData = LangModel.getAllLangData();
 		return (
 			<div>
 				<Tabs defaultActiveKey={1}>
 					<Tab eventKey={1} title="Lines → Words">
-						<LinesToWords {...this.state} _changeLinePrice={this._changeLinePrice} _changeLang={this._changeLang} />
+						<LinesToWords {...this.state} _changeLinePrice={this._changeLinePrice} _changeSourceLang={this._changeSourceLang} languageData={languageData} />
 					</Tab>
-					{/*
-					<Tab eventKey={2} title="Words → Lines">
-						<Converter
-							defaultPrice={0.19}
-							defaultLang="German"
-							fromUnit="word"
-							toUnit="line" />
-					</Tab>
-					*/}
 	  		</Tabs>
 			</div>
 		);

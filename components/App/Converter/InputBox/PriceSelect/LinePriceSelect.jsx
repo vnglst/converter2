@@ -3,7 +3,7 @@
 //
 
 import React from 'react';
-import * as utils from '../../utils/utils.js';
+import * as utils from '../../../utils/utils.js';
 import PriceSelect from './PriceSelect.jsx';
 
 export default class LinePriceSelect extends React.Component {
