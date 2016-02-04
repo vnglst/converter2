@@ -20,7 +20,7 @@ import LinePriceOutput from './OutputBox/PriceOutput/LinePriceOutput.jsx';
 import DetailedOutput from './DetailedOutput/DetailedOutput.jsx';
 import PagePriceOutput from './DetailedOutput/PriceOutput/PagePriceOutput.jsx';
 import HourPriceOutput from './DetailedOutput/PriceOutput/HourPriceOutput.jsx';
-
+import CharPriceOutput from './DetailedOutput/PriceOutput/CharPriceOutput.jsx';
 
 export default class WordsToLines extends React.Component {
 	constructor(props) {
@@ -68,6 +68,7 @@ export default class WordsToLines extends React.Component {
 						<DetailedOutput>
 							<PagePriceOutput {...this.state} />
 							<HourPriceOutput {...this.state} />
+							<CharPriceOutput {...this.state} />
 						</DetailedOutput>
 					</Panel>
 					<Panel header="Assumptions" eventKey="2">
