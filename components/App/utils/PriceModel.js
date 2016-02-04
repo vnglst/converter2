@@ -5,7 +5,7 @@
 import LangModel from './LangModel.js';
 import * as utils from './utils.js';
 
-const languageData = LangModel.getAllLangData();
+const languageData = LangModel.langData;
 
 // Retrieves the array of characters per word for certain language
 const getCharsPerWordArr = function(langName) {
