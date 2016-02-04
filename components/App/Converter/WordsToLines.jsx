@@ -15,9 +15,11 @@ import SourceLangSelect from './InputBox/LangSelect/SourceLangSelect.jsx';
 import WordPriceSelect from './InputBox/PriceSelect/WordPriceSelect.jsx';
 
 import OutputBox from './OutputBox/OutputBox.jsx';
-import MoreOutputBox from './OutputBox/MoreOutputBox.jsx';
 import LinePriceOutput from './OutputBox/PriceOutput/LinePriceOutput.jsx';
-import PagePriceOutput from './OutputBox/PriceOutput/PagePriceOutput.jsx';
+
+import DetailedOutput from './DetailedOutput/DetailedOutput.jsx';
+import PagePriceOutput from './DetailedOutput/PriceOutput/PagePriceOutput.jsx';
+import HourPriceOutput from './DetailedOutput/PriceOutput/HourPriceOutput.jsx';
 
 
 export default class WordsToLines extends React.Component {
@@ -63,11 +65,10 @@ export default class WordsToLines extends React.Component {
 				</OutputBox>
 				<Accordion>
 					<Panel header="Other rates" eventKey="1">
-						<MoreOutputBox>
+						<DetailedOutput>
 							<PagePriceOutput {...this.state} />
-							<PagePriceOutput {...this.state} />
-							<PagePriceOutput {...this.state} />
-						</MoreOutputBox>
+							<HourPriceOutput {...this.state} />
+						</DetailedOutput>
 					</Panel>
 					<Panel header="Assumptions" eventKey="2">
 					</Panel>

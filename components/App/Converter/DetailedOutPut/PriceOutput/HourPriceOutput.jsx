@@ -5,14 +5,14 @@
 import React from 'react';
 import PriceOutput from '../../common/PriceOutput.jsx';
 
-export default class WordPriceOutput extends React.Component {
+export default class HourPriceOutput extends React.Component {
 	render () {
-		const priceLabel = 'Per word';
+		const priceLabel = 'Per hour';
 		return(
 			<PriceOutput {...this.props} renderPrice={this.renderPrice} priceLabel={priceLabel} />
 		)
 	}
 	renderPrice = () => {
-		return this.props.priceModel.getWordPriceStr();
+		return this.props.priceModel.getHourPriceStr();
 	}
 }

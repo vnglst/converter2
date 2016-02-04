@@ -4,7 +4,7 @@
 
 import React from 'react';
 
-export default class MoreOutputBox extends React.Component {
+export default class DetailedOutput extends React.Component {
   render() {
     return (
       <form className="form-horizontal">

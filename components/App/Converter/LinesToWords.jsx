@@ -14,7 +14,8 @@ import LinePriceSelect from './InputBox/PriceSelect/LinePriceSelect.jsx';
 
 import OutputBox from './OutputBox/OutputBox.jsx';
 import WordPriceOutput from './OutputBox/PriceOutput/WordPriceOutput.jsx';
-import PagePriceOutput from './OutputBox/PriceOutput/PagePriceOutput.jsx';
+
+import PagePriceOutput from './DetailedOutput/PriceOutput/PagePriceOutput.jsx';
 
 export default class LinesToWords extends React.Component {
 	constructor(props) {
