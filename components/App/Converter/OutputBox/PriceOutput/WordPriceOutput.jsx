@@ -3,7 +3,7 @@
 //
 
 import React from 'react';
-import PriceOutput from './PriceOutput.jsx';
+import PriceOutput from '../../common/PriceOutput.jsx';
 
 export default class WordPriceOutput extends React.Component {
 	render () {
