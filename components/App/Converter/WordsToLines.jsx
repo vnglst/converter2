@@ -51,17 +51,16 @@ export default class WordsToLines extends React.Component {
 		this.setState({ priceModel });
 	}
 	render () {
-		const languageData = LangModel.getAllLangData();
+		const languageData = LangModel.langData;
 		return(
 			<div>
-				<InputBox >
+				<InputBox>
           <WordPriceSelect {...this.state} _changeWordPrice={this._changeWordPrice}/>
           <SourceLangSelect {...this.state} _changeSourceLang={this._changeSourceLang} languageData={languageData} />
         </InputBox>
 				<OutputBox>
 					<LinePriceOutput {...this.state} />
 				</OutputBox>
-
 				<Accordion>
 					<Panel header="Other rates" eventKey="1">
 						<MoreOutputBox>

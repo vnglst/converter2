@@ -47,7 +47,7 @@ export default class LinesToWords extends React.Component {
 		this.setState({ priceModel });
 	}
 	render () {
-		const languageData = LangModel.getAllLangData();
+		const languageData = LangModel.langData;
 		return(
 			<div>
 				<InputBox >

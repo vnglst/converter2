@@ -19,9 +19,6 @@ const sortLangData = () => {
 
 const langData = sortLangData();
 
-// Returns sorted langData
-const getAllLangData = () => langData;
-
 // Return data for specific language depending on options
 const getStats = (langName) => {
   const langIndex = langData.findIndex((lang) => lang.name === langName);
@@ -30,6 +27,6 @@ const getStats = (langName) => {
 }
 
 export default {
-  getAllLangData: getAllLangData,
+  langData: langData,
   getStats: getStats
 }
