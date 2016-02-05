@@ -50,7 +50,9 @@ export default class WordsToLines extends React.Component {
 	}
 	_changeSourceLang = (langName) => {
 		const priceModel = this.state.priceModel;
+		const wordPrice = this.state.priceModel.wordPrice;
 		priceModel.setSourceLang(langName);
+		priceModel.setWordPrice(wordPrice);
 		this.setState({ priceModel });
 	}
 	render () {
