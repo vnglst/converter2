@@ -21,7 +21,7 @@ Using ```git commit``` also runs the deploy command.
 ### Structure App
 
 The app itself is located in the Components folder and has the following structure. Utils contains shared utilities and models. The folder common contains shared components.
-
+```
 ├── App
 │   ├── Converter
 │   │   ├── DetailedOutPut
@@ -43,3 +43,4 @@ The app itself is located in the Components folder and has the following structu
 ├── Layout
 ├── Link
 └── Navigation
+```
