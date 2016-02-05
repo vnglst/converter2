@@ -15,53 +15,51 @@ import LinePriceSelect from './InputBox/PriceSelect/LinePriceSelect.jsx';
 import OutputBox from './OutputBox/OutputBox.jsx';
 import WordPriceOutput from './OutputBox/PriceOutput/WordPriceOutput.jsx';
 
-import PagePriceOutput from './DetailedOutput/PriceOutput/PagePriceOutput.jsx';
+import DetailsAccordion from './DetailsAccordion.jsx';
 
 export default class LinesToWords extends React.Component {
-	constructor(props) {
-		super(props);
-		const priceModel = new PriceModel({
-			sourceLang: 'German',
-			linePrice: 1.35
-		});
-		const defaultState = {
-			priceModel
-		};
-		this.storageName = 'LinesToWords';
-		const storedState = store(this.storageName);
-		// storedState is "false" if empty OR environment != browser
-		// this.state = storedState || defaultState;
-		this.state = defaultState;
-	}
-	componentDidUpdate () {
-		// Store new state in localStorage
-		store(this.storageName, this.state);
-	}
-	_changeLinePrice = (linePrice) => {
-		const priceModel = this.state.priceModel;
-		priceModel.setLinePrice(linePrice);
-		this.setState({ priceModel });
-	}
-	_changeSourceLang = (langName) => {
-		const priceModel = this.state.priceModel;
-		const linePrice = this.state.priceModel.linePrice;
-		priceModel.setSourceLang(langName);
-		priceModel.setLinePrice(linePrice);
-		this.setState({ priceModel });
-	}
-	render () {
-		const languageData = LangModel.langData;
-		return(
-			<div>
-				<InputBox >
-          <LinePriceSelect {...this.state} _changeLinePrice={this._changeLinePrice}/>
-          <SourceLangSelect {...this.state} _changeSourceLang={this._changeSourceLang} languageData={languageData} />
-        </InputBox>
-				<OutputBox>
-					<WordPriceOutput {...this.state} />
-					<PagePriceOutput {...this.state} />
-				</OutputBox>
-			</div>
-		)
-	}
+		constructor(props) {
+				super(props);
+				const priceModel = new PriceModel({sourceLang: 'German', linePrice: 1.45});
+				const defaultState = {
+						priceModel
+				};
+				this.storageName = 'LinesToWords';
+				const storedState = store(this.storageName);
+				// storedState is "false" if empty OR environment != browser
+				// TODO fix
+				// this.state = storedState || defaultState;
+				this.state = defaultState;
+		}
+		componentDidUpdate() {
+				// Store new state in localStorage
+				store(this.storageName, this.state);
+		}
+		_changeLinePrice = (linePrice) => {
+				const priceModel = this.state.priceModel;
+				priceModel.setLinePrice(linePrice);
+				this.setState({priceModel});
+		}
+		_changeSourceLang = (langName) => {
+				const linePrice = this.state.priceModel.linePrice;
+				const priceModel = this.state.priceModel;
+				priceModel.setSourceLang(langName);
+				priceModel.setLinePrice(linePrice);
+				this.setState({priceModel});
+		}
+		render() {
+				const languageData = LangModel.langData;
+				return (
+						<div>
+								<InputBox >
+										<LinePriceSelect {...this.state} _changeLinePrice={this._changeLinePrice}/>
+										<SourceLangSelect {...this.state} _changeSourceLang={this._changeSourceLang} languageData={languageData}/>
+								</InputBox>
+								<OutputBox>
+										<WordPriceOutput {...this.state}/>
+								</OutputBox>
+								<DetailsAccordion {...this.state}/>
+						</div>
+				)
+		}
 }

@@ -3,8 +3,6 @@
 //
 
 import React from 'react';
-import Panel from 'react-bootstrap/lib/Panel';
-import Accordion from 'react-bootstrap/lib/Accordion';
 
 import store from '../utils/LocalStorage.js';
 import LangModel from '../utils/LangModel.js';
@@ -17,70 +15,51 @@ import WordPriceSelect from './InputBox/PriceSelect/WordPriceSelect.jsx';
 import OutputBox from './OutputBox/OutputBox.jsx';
 import LinePriceOutput from './OutputBox/PriceOutput/LinePriceOutput.jsx';
 
-import DetailedOutput from './DetailedOutput/DetailedOutput.jsx';
-import PagePriceOutput from './DetailedOutput/PriceOutput/PagePriceOutput.jsx';
-import CharPriceOutput from './DetailedOutput/PriceOutput/CharPriceOutput.jsx';
-import HourPriceOutput from './DetailedOutput/PriceOutput/HourPriceOutput.jsx';
-import DayPriceOutput from './DetailedOutput/PriceOutput/DayPriceOutput.jsx';
+import DetailsAccordion from './DetailsAccordion.jsx';
 
 export default class WordsToLines extends React.Component {
-	constructor(props) {
-		super(props);
-		const priceModel = new PriceModel({
-			sourceLang: 'English',
-			wordPrice: 0.20
-		});
-		const defaultState = {
-			priceModel
-		};
-		this.storageName = 'WordsToLines';
-		const storedState = store(this.storageName);
-		// storedState is "false" if empty OR environment != browser
-		// this.state = storedState || defaultState;
-		this.state = defaultState;
-	}
-	componentDidUpdate () {
-		// Store new state in localStorage
-		store(this.storageName, this.state);
-	}
-	_changeWordPrice = (wordPrice) => {
-		const priceModel = this.state.priceModel;
-		priceModel.setWordPrice(wordPrice);
-		this.setState({ priceModel });
-	}
-	_changeSourceLang = (langName) => {
-		const priceModel = this.state.priceModel;
-		const wordPrice = this.state.priceModel.wordPrice;
-		priceModel.setSourceLang(langName);
-		priceModel.setWordPrice(wordPrice);
-		this.setState({ priceModel });
-	}
-	render () {
-		const languageData = LangModel.langData;
-		return(
-			<div>
-				<InputBox>
-          <WordPriceSelect {...this.state} _changeWordPrice={this._changeWordPrice}/>
-          <SourceLangSelect {...this.state} _changeSourceLang={this._changeSourceLang} languageData={languageData} />
-        </InputBox>
-				<OutputBox>
-					<LinePriceOutput {...this.state} />
-				</OutputBox>
-				<Accordion>
-					<Panel header="More rates" eventKey="1">
-						<DetailedOutput>
-							<PagePriceOutput {...this.state} />
-							<CharPriceOutput {...this.state} />
-							<HourPriceOutput {...this.state} />
-							<DayPriceOutput {...this.state} />
-						</DetailedOutput>
-					</Panel>
-					<Panel header="Assumptions" eventKey="2">
-					</Panel>
-					<Panel header="Details" eventKey="3">
-					</Panel>
-				</Accordion>
-			</div>
-		)
-	}
+		constructor(props) {
+				super(props);
+				const priceModel = new PriceModel({sourceLang: 'German', wordPrice: 0.20});
+				const defaultState = {
+						priceModel
+				};
+				this.storageName = 'WordsToLines';
+				const storedState = store(this.storageName);
+				// storedState is "false" if empty OR environment != browser
+				// TODO fix
+				//this.state = storedState || defaultState;
+				this.state = defaultState;
+		}
+		componentDidUpdate() {
+				// Store new state in localStorage
+				store(this.storageName, this.state);
+		}
+		_changeWordPrice = (wordPrice) => {
+				const priceModel = this.state.priceModel;
+				priceModel.setWordPrice(wordPrice);
+				this.setState({priceModel});
+		}
+		_changeSourceLang = (langName) => {
+				const wordPrice = this.state.priceModel.wordPrice;
+				const priceModel = this.state.priceModel;
+				priceModel.setSourceLang(langName);
+				priceModel.setWordPrice(wordPrice);
+				this.setState({priceModel});
+		}
+		render() {
+				const languageData = LangModel.langData;
+				return (
+						<div>
+								<InputBox>
+										<WordPriceSelect {...this.state} _changeWordPrice={this._changeWordPrice}/>
+										<SourceLangSelect {...this.state} _changeSourceLang={this._changeSourceLang} languageData={languageData}/>
+								</InputBox>
+								<OutputBox>
+										<LinePriceOutput {...this.state}/>
+								</OutputBox>
+								<DetailsAccordion {...this.state}/>
+						</div>
+				)
+		}
 }
