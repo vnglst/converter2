@@ -44,7 +44,9 @@ export default class LinesToWords extends React.Component {
 	}
 	_changeSourceLang = (langName) => {
 		const priceModel = this.state.priceModel;
+		const linePrice = this.state.priceModel.linePrice;
 		priceModel.setSourceLang(langName);
+		priceModel.setLinePrice(linePrice);
 		this.setState({ priceModel });
 	}
 	render () {
