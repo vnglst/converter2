@@ -19,8 +19,9 @@ import LinePriceOutput from './OutputBox/PriceOutput/LinePriceOutput.jsx';
 
 import DetailedOutput from './DetailedOutput/DetailedOutput.jsx';
 import PagePriceOutput from './DetailedOutput/PriceOutput/PagePriceOutput.jsx';
-import HourPriceOutput from './DetailedOutput/PriceOutput/HourPriceOutput.jsx';
 import CharPriceOutput from './DetailedOutput/PriceOutput/CharPriceOutput.jsx';
+import HourPriceOutput from './DetailedOutput/PriceOutput/HourPriceOutput.jsx';
+import DayPriceOutput from './DetailedOutput/PriceOutput/DayPriceOutput.jsx';
 
 export default class WordsToLines extends React.Component {
 	constructor(props) {
@@ -64,11 +65,12 @@ export default class WordsToLines extends React.Component {
 					<LinePriceOutput {...this.state} />
 				</OutputBox>
 				<Accordion>
-					<Panel header="Other rates" eventKey="1">
+					<Panel header="More rates" eventKey="1">
 						<DetailedOutput>
 							<PagePriceOutput {...this.state} />
-							<HourPriceOutput {...this.state} />
 							<CharPriceOutput {...this.state} />
+							<HourPriceOutput {...this.state} />
+							<DayPriceOutput {...this.state} />
 						</DetailedOutput>
 					</Panel>
 					<Panel header="Assumptions" eventKey="2">

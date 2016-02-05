@@ -57,6 +57,7 @@ export default class {
     this.linePrice = this.charPrice * this.charsPerLine;
     this.pagePrice = this.charPrice * this.charsPerPage;
     this.hourPrice = this.wordPrice * this.wordsPerHour;
+    this.dayPrice = this.hourPrice * this.hoursPerDay;
   }
 
   setLinePrice = (linePrice) => {
@@ -72,6 +73,7 @@ export default class {
   getWordPrice = () => this.wordPrice.toFixed(2);
   getSourceLangStr = () => this.sourceLang;
   getHourPriceStr = () => utils.priceToEuroString(this.hourPrice);
+  getDayPriceStr = () => utils.priceToEuroString(this.dayPrice);
   getWordPriceStr = () => utils.priceToEuroString(this.wordPrice);
   getLinePriceStr = () => utils.priceToEuroString(this.linePrice);
   getCharPriceStr = () => utils.priceToEuroString(this.charPrice);
