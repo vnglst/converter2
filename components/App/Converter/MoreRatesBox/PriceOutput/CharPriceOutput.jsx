@@ -8,11 +8,9 @@ import PriceOutput from '../../PriceOutput.jsx';
 export default class CharPriceOutput extends React.Component {
 	render () {
 		const priceLabel = 'Per character';
+		const charPriceStr = this.props.priceOutput.charPriceStr;
 		return(
-			<PriceOutput {...this.props} renderPrice={this.renderPrice} priceLabel={priceLabel} />
+			<PriceOutput {...this.props} priceStr={charPriceStr} priceLabel={priceLabel} />
 		)
-	}
-	renderPrice = () => {
-		return this.props.priceModel.getCharPriceStr();
 	}
 }

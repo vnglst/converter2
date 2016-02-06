@@ -8,11 +8,9 @@ import PriceOutput from '../../PriceOutput.jsx';
 export default class LinePriceOutput extends React.Component {
 	render () {
 		const priceLabel = 'Per line';
+		const linePriceStr = this.props.priceOutput.linePriceStr;
 		return(
-			<PriceOutput {...this.props} renderPrice={this.renderPrice} priceLabel={priceLabel} />
+			<PriceOutput {...this.props} priceStr={linePriceStr} priceLabel={priceLabel} />
 		)
-	}
-	renderPrice = () => {
-		return this.props.priceModel.getLinePriceStr();
 	}
 }

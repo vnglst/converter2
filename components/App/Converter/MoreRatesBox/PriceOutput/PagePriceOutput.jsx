@@ -8,11 +8,9 @@ import PriceOutput from '../../PriceOutput.jsx';
 export default class PagePriceOutput extends React.Component {
 	render () {
 		const priceLabel = 'Per page';
+		const pagePriceStr = this.props.priceOutput.pagePriceStr;
 		return(
-			<PriceOutput {...this.props} renderPrice={this.renderPrice} priceLabel={priceLabel} />
+			<PriceOutput {...this.props} priceStr={pagePriceStr} priceLabel={priceLabel} />
 		)
-	}
-	renderPrice = () => {
-		return this.props.priceModel.getPagePriceStr();
 	}
 }

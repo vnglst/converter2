@@ -10,7 +10,7 @@ export default class WordPriceSelect extends React.Component {
   render() {
     const priceOptions = utils.generatePriceOptions(0.10, 0.45, 0.01);
     const priceLabel = 'Rate per word';
-    const currentPrice = this.props.priceModel.getWordPrice();
+    const currentPrice = this.props.wordPrice;
     return (
       <PriceSelect {...this.props} onPriceChange={this.props._changeWordPrice} priceLabel={priceLabel} priceOptions={priceOptions} currentPrice={currentPrice}/>
     )

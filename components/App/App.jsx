@@ -19,8 +19,7 @@ export default class App extends React.Component {
 		this.storageName = 'AppState';
 		const storedState = store(this.storageName);
 		// storedState is "false" if empty OR environment != browser
-		// this.state = storedState || defaultState;
-		this.state = defaultState;
+		this.state = storedState || defaultState;
 	}
 	componentDidUpdate () {
 		// Store new state in localStorage
@@ -36,7 +35,7 @@ export default class App extends React.Component {
 			<div>
 				<Tabs defaultActiveKey={1}>
 					<Tab eventKey={1} title="Lines → Words">
-						<LinesToWords {...this.state} />
+					 <LinesToWords {...this.state} />
 					</Tab>
 					<Tab eventKey={2} title="Words → Lines">
 						<WordsToLines {...this.state} />
