@@ -27,8 +27,8 @@ export default class WordsToLines extends React.Component {
 				this.storageName = 'WordsToLines';
 				const storedState = store(this.storageName);
 				// storedState is "false" if empty OR environment != browser
-				// TODO fix
-				//this.state = storedState || defaultState;
+				// TODO fix: localStorage cannot store objects
+				// this.state = storedState || defaultState;
 				this.state = defaultState;
 		}
 		componentDidUpdate() {
