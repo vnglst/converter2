@@ -17,16 +17,8 @@ describe('Test Prices function. Input: { langName: German, linePrice: 1.25 }', (
     expect(output).to.be.a('object');
   });
 
-  it('Should have a linePrice with 1.25 as a string', function () {
-    expect(output.linePrice).to.be.equal('1.25');
-  });
-
   it('Should have a linePriceStr', function () {
     expect(output.linePriceStr).to.be.equal('€ 1.25');
-  });
-
-  it('Should have a wordPrice', function () {
-    expect(output.wordPrice).to.be.equal('0.17');
   });
 
   it('Should have a wordPriceStr', function () {
@@ -54,8 +46,8 @@ describe('Test Prices function. Input: { langName: Dutch, wordPrice: 0.20 }', ()
  }
  const output = calcPrices(input);
 
-  it('Should have a linePrice with 1.69 as a string', function () {
-    expect(output.linePrice).to.be.equal('1.69');
+  it('Should have a linePriceStr € 1.69 ', function () {
+    expect(output.linePriceStr).to.be.equal('€ 1.69');
   });
 
 });
