@@ -6,7 +6,7 @@ import React from 'react';
 
 export default class PriceOutput extends React.Component {
 	render () {
-		const priceString = this.props.renderPrice();
+		const priceStr = this.props.priceStr
 		const priceLabel = this.props.priceLabel
 		return(
 			<div className="form-group">
@@ -15,7 +15,7 @@ export default class PriceOutput extends React.Component {
 				</label>
 				<div className="col-sm-9">
 					<span className="form-control" id="priceSpan" readOnly>
-						{priceString}
+						{priceStr}
 					</span>
 				</div>
 			</div>

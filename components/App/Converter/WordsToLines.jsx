@@ -6,7 +6,7 @@ import React from 'react';
 
 import store from '../utils/LocalStorage.js';
 import LangModel from '../utils/LangModel.js';
-import PriceModel from '../utils/PriceModel.js';
+import calcPrices from '../utils/calcPrices.js';
 
 import InputBox from './InputBox/InputBox.jsx';
 import SourceLangSelect from './InputBox/LangSelect/SourceLangSelect.jsx';
@@ -20,35 +20,30 @@ import DetailsAccordion from './DetailsAccordion.jsx';
 export default class WordsToLines extends React.Component {
 		constructor(props) {
 				super(props);
-				const priceModel = new PriceModel({sourceLang: 'German', wordPrice: 0.20});
 				const defaultState = {
-						priceModel
+						sourceLang: 'German',
+						wordPrice: '0.20'
 				};
 				this.storageName = 'WordsToLines';
 				const storedState = store(this.storageName);
 				// storedState is "false" if empty OR environment != browser
-				// TODO fix: localStorage cannot store objects
-				// this.state = storedState || defaultState;
-				this.state = defaultState;
+				this.state = storedState || defaultState;
 		}
 		componentDidUpdate() {
 				// Store new state in localStorage
 				store(this.storageName, this.state);
 		}
 		_changeWordPrice = (wordPrice) => {
-				const priceModel = this.state.priceModel;
-				priceModel.setWordPrice(wordPrice);
-				this.setState({priceModel});
+				this.setState({wordPrice});
 		}
 		_changeSourceLang = (langName) => {
-				const wordPrice = this.state.priceModel.wordPrice;
-				const priceModel = this.state.priceModel;
-				priceModel.setSourceLang(langName);
-				priceModel.setWordPrice(wordPrice);
-				this.setState({priceModel});
+				this.setState({sourceLang: langName});
 		}
 		render() {
 				const languageData = LangModel.langData;
+				const sourceLang = this.state.sourceLang;
+				const wordPrice = this.state.wordPrice;
+				const priceOutput = calcPrices({ sourceLang, wordPrice });
 				return (
 						<div>
 								<InputBox>
@@ -56,9 +51,9 @@ export default class WordsToLines extends React.Component {
 										<SourceLangSelect {...this.state} _changeSourceLang={this._changeSourceLang} languageData={languageData}/>
 								</InputBox>
 								<OutputBox>
-										<LinePriceOutput {...this.state}/>
+										<LinePriceOutput {...this.state} priceOutput={priceOutput} />
 								</OutputBox>
-								<DetailsAccordion {...this.state}/>
+								<DetailsAccordion {...this.state} priceOutput={priceOutput} />
 						</div>
 				)
 		}

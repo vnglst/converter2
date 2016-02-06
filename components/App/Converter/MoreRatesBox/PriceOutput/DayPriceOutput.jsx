@@ -8,11 +8,9 @@ import PriceOutput from '../../PriceOutput.jsx';
 export default class DayPriceOutput extends React.Component {
 	render () {
 		const priceLabel = 'Per day';
+		const dayPriceStr = this.props.priceOutput.dayPriceStr;
 		return(
-			<PriceOutput {...this.props} renderPrice={this.renderPrice} priceLabel={priceLabel} />
+			<PriceOutput {...this.props} priceStr={dayPriceStr} priceLabel={priceLabel} />
 		)
-	}
-	renderPrice = () => {
-		return this.props.priceModel.getDayPriceStr();
 	}
 }
