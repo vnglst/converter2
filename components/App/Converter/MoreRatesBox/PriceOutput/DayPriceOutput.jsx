@@ -3,7 +3,7 @@
 //
 
 import React from 'react';
-import PriceOutput from '../../common/PriceOutput.jsx';
+import PriceOutput from '../../PriceOutput.jsx';
 
 export default class DayPriceOutput extends React.Component {
 	render () {

@@ -13,7 +13,6 @@ export default function store(namespace, data) {
 		return localStorage.setItem(namespace, JSON.stringify(data));
 	}
 	var store = localStorage.getItem(namespace);
-
 	// Returns false if not found in localStorage
 	return (store && JSON.parse(store));
 }
