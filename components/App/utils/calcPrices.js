@@ -72,6 +72,11 @@ export default function calcPrices(input) {
 		charPriceStr,
 		pagePriceStr,
 		hourPriceStr,
-		dayPriceStr
+		dayPriceStr,
+		charsPerLine,
+		charsPerPage,
+		wordsPerDay,
+		wordsPerHour,
+		hoursPerDay
 	}
 }
