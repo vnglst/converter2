@@ -26,15 +26,14 @@ The app itself is located in the Components folder and has the following structu
 ```
 ├── App
 │   ├── Converter
-│   │   ├── DetailedOutPut
-│   │   │   └── PriceOutput
-│   │   ├── DetailsBox
+│   │   ├── DetailsBox.bak
 │   │   ├── InputBox
 │   │   │   ├── LangSelect
 │   │   │   └── PriceSelect
-│   │   ├── OutputBox
-│   │       └── PriceOutput
-│   │  
+│   │   ├── MoreRatesBox
+│   │   │   └── PriceOutput
+│   │   └── OutputBox
+│   │       └── PriceOutput
 │   ├── img
 │   └── utils
 ├── Content
