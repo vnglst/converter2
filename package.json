@@ -1,7 +1,7 @@
 {
 	"git": {
 		"scripts": {
-			"pre-push": "npm run deploy"
+			"pre-push": "npm test"
 		}
 	},
 	"scripts": {
@@ -10,8 +10,10 @@
 		"clean": "babel-node --eval \"require('./tools/clean')().catch(err => console.log(err.stack))\"",
 		"build": "babel-node --eval \"require('./tools/build')().catch(err => console.log(err.stack))\"",
 		"start": "babel-node --eval \"require('./tools/start')().catch(err => console.log(err.stack))\"",
-		"deploy": "npm run build release && surge -p ./build",
-		"ftp-deploy": "npm run build release && node ./tools/ftp.js && open -a Google\\ Chrome http://beta.vangilst.de",
+		"deploy": "npm test && npm run build release && surge -p ./build",
+		"deploy-beta": "npm run build release && surge -d converter-beta.vangilst.de -p ./build && npm run chrome-beta",
+		"deploy-ftp": "npm run build release && node ./tools/ftp.js",
+		"chrome-beta": "open -a Google\\ Chrome http://converter-beta.vangilst.de",
 		"pagespeed": "node node_modules/psi/cli.js --nokey --strategy=mobile converter.vangilst.de && node node_modules/psi/cli.js --nokey --strategy=desktop converter.vangilst.de",
 		"pagespeed-chrome": "open -a Google\\ Chrome https://developers.google.com/speed/pagespeed/insights/\\?url\\=converter.vangilst.de\\&tab\\=mobile"
 	},
