@@ -24,14 +24,7 @@ export default class WordsToLines extends React.Component {
 						sourceLang: 'German',
 						wordPrice: '0.20'
 				};
-				this.storageName = 'WordsToLines';
-				const storedState = store(this.storageName);
-				// storedState is "false" if empty OR environment != browser
-				this.state = storedState || defaultState;
-		}
-		componentDidUpdate() {
-				// Store new state in localStorage
-				store(this.storageName, this.state);
+				this.state = defaultState;
 		}
 		_changeWordPrice = (wordPrice) => {
 				this.setState({wordPrice});
@@ -43,7 +36,7 @@ export default class WordsToLines extends React.Component {
 				const languageData = LangModel.langData;
 				const sourceLang = this.state.sourceLang;
 				const wordPrice = this.state.wordPrice;
-				const priceOutput = calcPrices({ sourceLang, wordPrice });
+				const priceOutput = calcPrices({sourceLang, wordPrice});
 				return (
 						<div>
 								<InputBox>
@@ -51,9 +44,9 @@ export default class WordsToLines extends React.Component {
 										<SourceLangSelect {...this.state} _changeSourceLang={this._changeSourceLang} languageData={languageData}/>
 								</InputBox>
 								<OutputBox>
-										<LinePriceOutput {...this.state} priceOutput={priceOutput} />
+										<LinePriceOutput {...this.state} priceOutput={priceOutput}/>
 								</OutputBox>
-								<DetailsAccordion {...this.state} priceOutput={priceOutput} />
+								<DetailsAccordion {...this.state} priceOutput={priceOutput}/>
 						</div>
 				)
 		}
