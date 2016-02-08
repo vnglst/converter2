@@ -60,10 +60,6 @@ export default function calcPrices({
 	const hourPriceStr = utils.priceToEuroString(hourPrice);
 	const dayPriceStr = utils.priceToEuroString(dayPrice);
 
-	// // Rounding, N.B. toFixed returns a string
-	// wordPrice = wordPrice.toFixed(2);
-	// linePrice = linePrice.toFixed(2);
-
 	return {
 		sourceLang,
 		linePrice,
