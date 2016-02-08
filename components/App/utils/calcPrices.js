@@ -31,19 +31,21 @@ const calcCharPrice = function (langName, wordPrice) {
 	return charPrice;
 }
 
-export default function calcPrices(input) {
-	// Defaults
-	const charsPerLine = input.charsPerLine || 55;
-	const charsPerPage = input.charsPerPage || 1500;
-	const wordsPerDay = input.wordsPerDay || 2000;
-	const hoursPerDay = input.hoursPerDay || 7;
-	const wordsPerHour = input.wordsPerHour || wordsPerDay / hoursPerDay;
-
+export default function calcPrices({
+	charsPerLine = 55,
+	charsPerPage = 1500,
+	wordsPerDay = 2000,
+	hoursPerDay = 7,
+	wordsPerHour = wordsPerDay / hoursPerDay,
+	sourceLang,
+	charPrice,
+	linePrice,
+	wordPrice
+}) {
 	// Options
-	const sourceLang = input.sourceLang;
-	let charPrice = input.linePrice / charsPerLine || calcCharPrice(sourceLang, input.wordPrice);
-	let wordPrice = input.wordPrice || calcWordPrice(sourceLang, charPrice);
-	let linePrice = input.linePrice || charPrice * charsPerLine;
+	charPrice = linePrice / charsPerLine || calcCharPrice(sourceLang, wordPrice);
+	wordPrice = wordPrice || calcWordPrice(sourceLang, charPrice);
+	linePrice = linePrice || charPrice * charsPerLine;
 
 	// Calculations
 	const pagePrice = charPrice * charsPerPage;
