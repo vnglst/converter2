@@ -10,20 +10,34 @@ import WordsToLines from './Converter/WordsToLines.jsx';
 import store from './utils/LocalStorage.js';
 
 export default class App extends React.Component {
-	render () {
-		return (
-			<div>
-				<Tabs defaultActiveKey={1}>
-					<Tab eventKey={1} title="Lines → Words">
-					 <LinesToWords />
-					</Tab>
-					<Tab eventKey={2} title="Words → Lines">
-						<WordsToLines />
-					</Tab>
-					<Tab eventKey={3} title="Settings">
-					</Tab>
-	  		</Tabs>
-			</div>
-		);
-	}
+		constructor(props) {
+				super(props);
+				const defaultState = {
+						charsPerLine: 55
+				};
+				this.state = defaultState;
+		};
+
+		_changeCharsPerLine = (charsPerLine) =>
+		{
+			this.setState({charsPerLine});
+		}
+		
+		render() {
+				return (
+						<div>
+								<Tabs defaultActiveKey={1}>
+										<Tab eventKey={1} title="Lines → Words">
+												<LinesToWords {...this.state}/>
+										</Tab>
+										<Tab eventKey={2} title="Words → Lines">
+												<WordsToLines {...this.state}/>
+										</Tab>
+										<Tab eventKey={3} title="Settings">
+
+										</Tab>
+								</Tabs>
+						</div>
+				);
+		}
 }

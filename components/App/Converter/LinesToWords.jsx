@@ -36,7 +36,8 @@ export default class LinesToWords extends React.Component {
 				const languageData = LangModel.langData;
 				const sourceLang = this.state.sourceLang;
 				const linePrice = this.state.linePrice;
-				const priceOutput = calcPrices({sourceLang, linePrice});
+				const charsPerLine = this.props.charsPerLine;
+				const priceOutput = calcPrices({sourceLang, linePrice, charsPerLine});
 				return (
 						<div>
 								<InputBox >
