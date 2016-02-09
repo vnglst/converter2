@@ -37,7 +37,10 @@ export default class LinesToWords extends React.Component {
 				const sourceLang = this.state.sourceLang;
 				const linePrice = this.state.linePrice;
 				const charsPerLine = this.props.charsPerLine;
-				const priceOutput = calcPrices({sourceLang, linePrice, charsPerLine});
+				const charsPerPage = this.props.charsPerPage;
+				const wordsPerDay = this.props.wordsPerDay;
+				const hoursPerDay = this.props.hoursPerDay;
+				const priceOutput = calcPrices({sourceLang, linePrice, charsPerLine, charsPerPage, wordsPerDay, hoursPerDay});
 				return (
 						<div>
 								<InputBox >
