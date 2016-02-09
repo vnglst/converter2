@@ -31,7 +31,7 @@ export default class App extends React.Component {
 										<Tab eventKey={2} title="Word → Line">
 												<WordsToLines {...this.state}/>
 										</Tab>
-										<Tab eventKey={3} title={<Glyphicon glyph="cog" />}>
+										<Tab eventKey={3} title={settingsGlypicon}>
 												<Settings {...this.state}
 													_changeCharsPerLine={(charsPerLine) => this.setState({charsPerLine})}
 													_changeCharsPerPage={(charsPerPage) => this.setState({charsPerPage})}
@@ -44,3 +44,5 @@ export default class App extends React.Component {
 				);
 		}
 }
+
+const settingsGlypicon = <Glyphicon glyph="cog" />;
