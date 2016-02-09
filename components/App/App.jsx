@@ -15,10 +15,12 @@ export default class App extends React.Component {
 			<div>
 				<Tabs defaultActiveKey={1}>
 					<Tab eventKey={1} title="Lines → Words">
-					 <LinesToWords {...this.state} />
+					 <LinesToWords />
 					</Tab>
 					<Tab eventKey={2} title="Words → Lines">
-						<WordsToLines {...this.state} />
+						<WordsToLines />
+					</Tab>
+					<Tab eventKey={3} title="Settings">
 					</Tab>
 	  		</Tabs>
 			</div>

@@ -4,12 +4,8 @@
 
 import React from 'react';
 
-export default class InputBox extends React.Component {
-  render() {
-    return (
-      <form className="form-horizontal well">
-        {this.props.children}
-      </form>
-    )
-  }
-}
+export default ({children}) => (
+  <form className="form-horizontal well">
+    {children}
+  </form>
+);
