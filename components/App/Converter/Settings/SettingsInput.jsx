@@ -11,7 +11,7 @@ export default class SettingsInput extends React.Component {
 			return (
 				<div className="form-group">
 						<div className="input-group">
-						  <input ref="setting" type="text" className="form-control" value={priceStr} />
+						  <input ref="setting" type="text" className="form-control" value={priceStr} onChange={this._handleChange}/>
 							<span className="input-group-addon">{priceLabel}</span>
 						</div>
 				</div>
