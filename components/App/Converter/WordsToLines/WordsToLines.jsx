@@ -14,7 +14,7 @@ import WordPriceSelect from './WordPriceSelect.jsx';
 import OutputBox from '../OutputBox.jsx';
 import LinePriceOutput from './LinePriceOutput.jsx';
 
-import DetailsAccordion from '../DetailsAccordion.jsx';
+import DetailsAccordion from '../DetailsAccordion/DetailsAccordion.jsx';
 
 export default class WordsToLines extends React.Component {
 		constructor(props) {

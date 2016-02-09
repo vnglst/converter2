@@ -13,7 +13,7 @@ export default class LangSelect extends React.Component {
 				<div className="col-sm-9">
 					<select
 						value={currentLang}
-						onChange={this._changeLang}
+						onChange={this._handleChange}
 	          className="form-control"
 	          ref="lang"
 						id="langSelect">
@@ -31,7 +31,7 @@ export default class LangSelect extends React.Component {
 			</option>
 		)
 	}
-	_changeLang = () => {
+	_handleChange = () => {
 		const lang = this.refs.lang.value
 		this.props.onLangChange(lang);
 	}
