@@ -5,11 +5,9 @@ import React from 'react';
 import './App.scss';
 import Tab from 'react-bootstrap/lib/Tab';
 import Tabs from 'react-bootstrap/lib/Tabs';
-import LinesToWords from './Converter/LinesToWords.jsx';
-import WordsToLines from './Converter/WordsToLines.jsx';
+import LinesToWords from './Converter/LinesToWords/LinesToWords.jsx';
+import WordsToLines from './Converter/WordsToLines/WordsToLines.jsx';
 import Settings from './Converter/Settings/Settings.jsx';
-
-import store from './utils/LocalStorage.js';
 
 export default class App extends React.Component {
 		constructor(props) {
@@ -26,10 +24,10 @@ export default class App extends React.Component {
 				return (
 						<div>
 								<Tabs defaultActiveKey={1} >
-										<Tab eventKey={1} title="Lines → Words">
+										<Tab eventKey={1} title="Line → Word">
 												<LinesToWords {...this.state}/>
 										</Tab>
-										<Tab eventKey={2} title="Words → Lines">
+										<Tab eventKey={2} title="Word → Line">
 												<WordsToLines {...this.state}/>
 										</Tab>
 										<Tab eventKey={3} title="Settings">

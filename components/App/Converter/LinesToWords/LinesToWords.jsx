@@ -4,18 +4,17 @@
 
 import React from 'react';
 
-import store from '../utils/LocalStorage.js';
-import LangModel from '../utils/LangModel.js';
-import calcPrices from '../utils/calcPrices.js';
+import LangModel from '../../utils/LangModel.js';
+import calcPrices from '../../utils/calcPrices.js';
 
-import InputBox from './InputBox/InputBox.jsx';
-import SourceLangSelect from './InputBox/LangSelect/SourceLangSelect.jsx';
-import LinePriceSelect from './InputBox/PriceSelect/LinePriceSelect.jsx';
+import InputBox from '../InputBox.jsx';
+import SourceLangSelect from '../SourceLangSelect.jsx';
+import LinePriceSelect from './LinePriceSelect.jsx';
 
-import OutputBox from './OutputBox/OutputBox.jsx';
-import WordPriceOutput from './OutputBox/PriceOutput/WordPriceOutput.jsx';
+import OutputBox from '../OutputBox.jsx';
+import WordPriceOutput from './WordPriceOutput.jsx';
 
-import DetailsAccordion from './DetailsAccordion.jsx';
+import DetailsAccordion from '../DetailsAccordion.jsx';
 
 export default class LinesToWords extends React.Component {
 		constructor(props) {

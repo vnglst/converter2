@@ -3,7 +3,7 @@
 //
 
 import React from 'react';
-import PriceOutput from '../../PriceOutput.jsx';
+import PriceOutput from '../PriceOutput.jsx';
 
 export default({priceOutput}) => (
 	<PriceOutput priceStr={priceOutput.wordPriceStr} priceLabel="Per word"/>

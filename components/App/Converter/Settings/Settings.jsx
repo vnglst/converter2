@@ -4,7 +4,7 @@
 
 import React from 'react';
 
-import InputBox from '../InputBox/InputBox.jsx';
+import InputBox from '../InputBox.jsx';
 import SettingsInput from './SettingsInput.jsx';
 
 export default (props) => (
