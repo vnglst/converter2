@@ -26,14 +26,9 @@ The app itself is located in the Components folder and has the following structu
 ```
 ├── App
 │   ├── Converter
-│   │   ├── DetailsBox.bak
-│   │   ├── InputBox
-│   │   │   ├── LangSelect
-│   │   │   └── PriceSelect
-│   │   ├── MoreRatesBox
-│   │   │   └── PriceOutput
-│   │   └── OutputBox
-│   │       └── PriceOutput
+│   │   ├── LinesToWords
+│   │   ├── Settings
+│   │   └── WordsToLines
 │   ├── img
 │   └── utils
 ├── Content
