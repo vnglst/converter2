@@ -5,6 +5,7 @@ import React from 'react';
 import './App.scss';
 import Tab from 'react-bootstrap/lib/Tab';
 import Tabs from 'react-bootstrap/lib/Tabs';
+import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import LinesToWords from './Converter/LinesToWords/LinesToWords.jsx';
 import WordsToLines from './Converter/WordsToLines/WordsToLines.jsx';
 import Settings from './Converter/Settings/Settings.jsx';
@@ -30,7 +31,7 @@ export default class App extends React.Component {
 										<Tab eventKey={2} title="Word → Line">
 												<WordsToLines {...this.state}/>
 										</Tab>
-										<Tab eventKey={3} title="Settings">
+										<Tab eventKey={3} title={<Glyphicon glyph="cog" />}>
 												<Settings {...this.state}
 													_changeCharsPerLine={(charsPerLine) => this.setState({charsPerLine})}
 													_changeCharsPerPage={(charsPerPage) => this.setState({charsPerPage})}
