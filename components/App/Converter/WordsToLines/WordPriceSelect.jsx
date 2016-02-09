@@ -3,8 +3,8 @@
 //
 
 import React from 'react';
-import * as utils from '../../../utils/utils.js';
-import PriceSelect from './PriceSelect.jsx';
+import * as utils from '../../utils/utils.js';
+import PriceSelect from '../PriceSelect.jsx';
 
 const priceOptions = utils.generatePriceOptions(0.10, 0.45, 0.01);
 
