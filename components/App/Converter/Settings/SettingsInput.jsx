@@ -10,11 +10,9 @@ export default class SettingsInput extends React.Component {
 			const priceLabel = this.props.priceLabel;
 			return (
 				<div className="form-group">
-						<label className="col-sm-3 control-label" htmlFor="priceSpan">
-								{priceLabel}
-						</label>
-						<div className="col-sm-9">
-								<input ref="setting" type="text" value={priceStr} onChange={this._handleChange} className="form-control" id="priceSpan"/>
+						<div className="input-group">
+						  <input ref="setting" type="text" className="form-control" value={priceStr} />
+							<span className="input-group-addon">{priceLabel}</span>
 						</div>
 				</div>
 		)
