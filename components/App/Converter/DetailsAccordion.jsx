@@ -9,18 +9,14 @@ import Panel from 'react-bootstrap/lib/Panel';
 import MoreRatesBox from './MoreRatesBox/MoreRatesBox.jsx';
 import AssumptionsBox from './AssumptionsBox/AssumptionsBox.jsx';
 
-export default class DetailsAccordion extends React.Component {
-		render() {
-				return (
-						<Accordion>
-								<Panel header="More rates" eventKey="1">
-										<MoreRatesBox {...this.props}/>
-								</Panel>
-								<Panel header="Assumptions" eventKey="2">
-										<AssumptionsBox {...this.props} />
-								</Panel>
-								<Panel header="Details" eventKey="3"></Panel>
-						</Accordion>
-				)
-		}
-}
+export default (props) => (
+	<Accordion>
+			<Panel header="More rates" eventKey="1">
+					<MoreRatesBox {...props}/>
+			</Panel>
+			<Panel header="Assumptions" eventKey="2">
+					<AssumptionsBox {...props} />
+			</Panel>
+			<Panel header="Details" eventKey="3"></Panel>
+	</Accordion>
+)
