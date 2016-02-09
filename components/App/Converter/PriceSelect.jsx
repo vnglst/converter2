@@ -18,7 +18,7 @@ export default class PriceSelect extends React.Component {
         <div className="col-sm-9">
           <select
             value={currentPrice}
-            onChange={this._changePrice}
+            onChange={this._handleChange}
             className="form-control"
             ref="price"
             id="priceSelect">
@@ -28,7 +28,7 @@ export default class PriceSelect extends React.Component {
       </div>
     )
   }
-  _changePrice = () => {
+  _handleChange = () => {
     const price = this.refs.price.value;
     this.props.onPriceChange(price);
   }
