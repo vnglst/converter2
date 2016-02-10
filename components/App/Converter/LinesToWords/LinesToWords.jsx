@@ -21,7 +21,7 @@ export default class LinesToWords extends React.Component {
 				super(props);
 				const defaultState = {
 						sourceLang: 'German',
-						linePrice: '1.45'
+						linePrice: '1.55'
 				};
 				this.state = defaultState;
 		}
