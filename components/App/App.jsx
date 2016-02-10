@@ -3,12 +3,16 @@
 //
 import React from 'react';
 import './App.scss';
+
 import Tab from 'react-bootstrap/lib/Tab';
 import Tabs from 'react-bootstrap/lib/Tabs';
 import Glyphicon from 'react-bootstrap/lib/Glyphicon';
+
 import LinesToWords from './Converter/LinesToWords/LinesToWords.jsx';
 import WordsToLines from './Converter/WordsToLines/WordsToLines.jsx';
 import Settings from './Converter/Settings/Settings.jsx';
+
+import store from './utils/LocalStorage.js';
 
 export default class App extends React.Component {
 		constructor(props) {
@@ -19,8 +23,14 @@ export default class App extends React.Component {
 						wordsPerDay: 2000,
 						hoursPerDay: 7
 				};
-				this.state = defaultState;
+				this.storeName = 'AppState-v-10-02-2016';
+				const storedState = store(this.storeName);
+				this.state = storedState || defaultState;
 		};
+		componentDidUpdate () {
+			// Store new state in localStorage
+		 	store(this.storeName, this.state);
+		}
 		render() {
 				return (
 						<div>
