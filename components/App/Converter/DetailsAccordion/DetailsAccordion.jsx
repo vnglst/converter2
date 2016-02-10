@@ -6,16 +6,20 @@ import React from 'react';
 import Accordion from 'react-bootstrap/lib/Accordion';
 import Panel from 'react-bootstrap/lib/Panel';
 
-import MoreRatesBox from './MoreRatesBox.jsx';
-import DetailsBox from './MoreRatesBox.jsx';
+import MoreRatesPanel from './MoreRatesPanel.jsx';
+import DetailsPanel from './DetailsPanel.jsx';
 
 export default (props) => (
-	<Accordion defaultActiveKey="1">
+	<Accordion defaultActiveKey="0">
 			<Panel header="More rates" eventKey="1">
-					<MoreRatesBox {...props}/>
+					<MoreRatesPanel {...props}/>
 			</Panel>
-			<Panel header="Details" eventKey="2">
-					<DetailsBox {...props}/>
+			<Panel header={detailsHeader(props.priceOutput)} eventKey="2">
+					<DetailsPanel {...props}/>
 			</Panel>
 	</Accordion>
+)
+
+const detailsHeader = (priceOutput) => (
+	'Details for '+priceOutput.sourceLang
 )
