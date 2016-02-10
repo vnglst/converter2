@@ -7,7 +7,6 @@ import GoogleAnalytics from '../GoogleAnalytics';
 import Fonts from '../Fonts';
 import config from '../../config';
 
-const bootstrapCDN = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css';
 const bootswatchCDN = 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/flatly/bootstrap.min.css';
 
 function Html({ title, description, body, debug }) {
@@ -19,7 +18,6 @@ function Html({ title, description, body, debug }) {
         <title>{title || config.title}</title>
         <meta name="description" content={description || config.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
         <link rel="stylesheet" href={bootswatchCDN} media="bogus-real-load-below"/>
         <script src={'/app.js?' + new Date().getTime()} />
       </head>
@@ -27,7 +25,6 @@ function Html({ title, description, body, debug }) {
         <div id="app" dangerouslySetInnerHTML={{ __html: body }} />
         <GoogleAnalytics />
         <Fonts />
-
         <link rel="stylesheet" href={bootswatchCDN} />
       </body>
     </html>
