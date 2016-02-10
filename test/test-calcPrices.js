@@ -51,3 +51,32 @@ describe('Test Prices function. Input: { langName: Dutch, wordPrice: 0.20 }', ()
   });
 
 });
+
+describe('Test Prices function. Input: { langName: German, linePrice: 1.55 }', () => {
+ const input = {
+  sourceLang: 'German',
+  linePrice: 1.55
+ }
+ const output = calcPrices(input);
+
+  it('Should have a wordPriceStr', function () {
+    expect(output.wordPriceStr).to.be.equal('€ 0.21');
+  });
+
+  it('Should have a charPriceStr', function () {
+    expect(output.charPriceStr).to.be.equal('€ 0.03');
+  });
+
+  it('Should have a hourPriceStr', function () {
+    expect(output.hourPriceStr).to.be.equal('€ 60.12');
+  });
+
+  it('Should have a pagePriceStr', function () {
+    expect(output.pagePriceStr).to.be.equal('€ 42.27');
+  });
+
+  it('Should have a dayPriceStr', function () {
+    expect(output.dayPriceStr).to.be.equal('€ 420.85');
+  });
+
+});
