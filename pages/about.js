@@ -9,34 +9,44 @@ export default class extends Component {
   render() {
     return (
       <div className="Text-Content">
+
         <h1>About this website</h1>
         <p>
           This website helps translators convert word to line prices and vice versa.
-          Charging per line is common practice in Germany, where a standard line (or "Normzeile") is assumed to be is 55 characters including spaces. Line prices may sound complicated and strange to translators used to charging per word, but for many languages this is actually a better and fairer way to estimate the amount of translation work involved. German words, for example, tend to be longer than English words and Finish words are even longer still. Many agencies and clients outside Germay, however, still use word counts to estimate their prices. And that's where this conversion tool might come in handy!
+          Charging per line is common practice in Germany, where a standard line (or "Normzeile") is assumed to be 55 characters including spaces. Line prices may sound complicated and strange to translators used to charging per word, but for many languages this is actually a better and fairer way to estimate the amount of translation work involved. German words, for example, tend to be longer than English words and Finnish words are even longer still. Many agencies and clients outside Germay, however, still use word counts to estimate their prices. And that's where this conversion tool might come in handy!
         </p>
+
         <h2>Help needed</h2>
         <p>
-          I made the Translator's Converter as a weekend/side project and I'd love to get feedback from fellow translators. What features are still missing? Are the results accurate for languages other than the ones I speak (Dutch, German & English)? I'm also specifically looking for the number of characters per word (including spaces) for different kinds of texts (e.g. legal, technical, financial and marketing texts). Feel free to contact me on <a href="https://twitter.com/vnglst">Twitter</a> or via <a href="http://vangilst.de/en/contact/">email</a>.</p>
+          I made the Translator's Converter as a <span className="strikethrough">weekend</span> side project and I'd love to get feedback from fellow translators. What features are still missing? Are the results accurate for languages other than the ones I speak (Dutch, German & English)? I'm also specifically looking for the number of characters per word (including spaces) for different kinds of texts (e.g. legal, technical, financial and marketing texts). Feel free to contact me on <a href="https://twitter.com/vnglst">Twitter</a> or via <a href="http://vangilst.de/en/contact/">email</a>.
+        </p>
+
+        <h2>Default values</h2>
+        <p>
+          The default values for word and line rates are from the German Justizvergütungs- und -entschädigungsgesetz (<a href="http://www.gesetze-im-internet.de/jveg/__11.html">JVEG</a>):
+        </p>
+          <blockquote>
+            Das Honorar für eine Übersetzung beträgt 1,55 Euro für jeweils angefangene 55 Anschläge des schriftlichen Textes (Grundhonorar). Bei nicht elektronisch zur Verfügung gestellten editierbaren Texten erhöht sich das Honorar auf 1,75 Euro für jeweils angefangene 55 Anschläge (erhöhtes Honorar). Ist die Übersetzung wegen der besonderen Umstände des Einzelfalls [...] besonders erschwert, beträgt das Grundhonorar 1,85 Euro und das erhöhte Honorar 2,05 Euro. Maßgebend für die Anzahl der Anschläge ist der Text in der Zielsprache; [...]. [<a href="https://de.wikipedia.org/wiki/Normzeile">Wikipedia</a>]
+          </blockquote>
+        <p>
+          The default values for characters per line/page and words per day are based on my own experience and may vary greatly per subject and translator. Those values can be changed in the Settings tab and these changes will be saved in your browser (using a cookie).
+        </p>
         <h2>Current features</h2>
         <ul>
           <li>Calculate line rates based on word rates</li>
           <li>Calculate word rates based on line rates</li>
-          <li>Show/hide detailed assumptions</li>
           <li>Conversion metrics based on Wolfram Alpha (all languages)</li>
           <li>Conversion metrics based on EU corpus (all EU languages)</li>
           <li>Conversion metrics for different kinds of source texts for German</li>
         </ul>
-        <h2>Future features</h2>
+        <h2>Planned features</h2>
         <ul>
           <li className="strikethrough">Add mobile version</li>
-          <li className="strikethrough">Show price ranges instead of one price</li>
           <li className="strikethrough">Add more source languages</li>
-          <li className="strikethrough">Add short description to the footer</li>
-          <li>Add more rates (per page, per hour & per day)</li>
-          <li className="strikethrough">Add more averages for different kinds of texts (for English & Dutch)</li>
-          <li>Add more averages French, Spanish and Italian</li>
-          <li>Add target languages</li>
+          <li className="strikethrough">Add more rates (per page, per hour & per day)</li>
+          <li className="strikethrough">Add more averages for different kinds of texts</li>
           <li className="strikethrough">Make source code available on Github</li>
+          <li>Add target languages</li>
         </ul>
 
         <h2>What people are saying</h2>
