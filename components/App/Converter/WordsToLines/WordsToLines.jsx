@@ -42,6 +42,7 @@ export default class WordsToLines extends React.Component {
 								<InputBox>
 										<WordPriceSelect {...this.state} _changeWordPrice={this._changeWordPrice}/>
 										<SourceLangSelect {...this.state} _changeSourceLang={this._changeSourceLang} languageData={languageData}/>
+										<hr />
 										<LinePriceOutput {...this.state} priceOutput={priceOutput}/>
 								</InputBox>
 								<DetailsAccordion {...this.state} priceOutput={priceOutput}/>
