@@ -4,6 +4,6 @@
 
 export default {
   title: 'Translator`s Converter',
-  description: 'Helps translators convert line to word prices.',
+raddescription: 'Helps translators convert line to word rates.',
   googleAnalyticsId: 'UA-39537146-3',
 };
