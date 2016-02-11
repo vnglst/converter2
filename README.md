@@ -26,6 +26,7 @@ The app itself is located in the Components folder and has the following structu
 ```
 ├── App
 │   ├── Converter
+│   │   ├── DetailsAccordion
 │   │   ├── LinesToWords
 │   │   ├── Settings
 │   │   └── WordsToLines
