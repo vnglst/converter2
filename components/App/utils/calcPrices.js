@@ -75,6 +75,7 @@ export default function calcPrices({
 		charsPerPage,
 		wordsPerDay,
 		wordsPerHour,
-		hoursPerDay
+		hoursPerDay,
+		LangModel
 	}
 }
