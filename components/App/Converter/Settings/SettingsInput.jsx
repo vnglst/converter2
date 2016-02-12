@@ -5,20 +5,25 @@
 import React from 'react';
 
 export default class SettingsInput extends React.Component {
+		propTypes : {
+				_handleChange: React.PropTypes.func.isRequired,
+				priceStr: React.PropTypes.string.isRequired,
+				priceLabel: React.PropType.string.isRequired
+		}
 		render() {
-			const priceStr = this.props.priceStr;
-			const priceLabel = this.props.priceLabel;
-			return (
-				<div className="form-group">
-						<div className="input-group">
-						  <input ref="setting" type="text" className="form-control" value={priceStr} onChange={this._handleChange}/>
-							<span className="input-group-addon">{priceLabel}</span>
+				const priceStr = this.props.priceStr;
+				const priceLabel = this.props.priceLabel;
+				return (
+						<div className="form-group">
+								<div className="input-group">
+										<input ref="setting" type="text" className="form-control" value={priceStr} onChange={this._handleChange}/>
+										<span className="input-group-addon">{priceLabel}</span>
+								</div>
 						</div>
-				</div>
-		)
-	}
-	_handleChange = () => {
-		const value = this.refs.setting.value;
-		this.props._changeSetting(value);
-	}
+				)
+		}
+		_handleChange = () => {
+				const value = this.refs.setting.value;
+				this.props._changeSetting(value);
+		}
 }
