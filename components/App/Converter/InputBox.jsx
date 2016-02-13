@@ -4,8 +4,14 @@
 
 import React from 'react';
 
-export default ({children}) => (
+const InputBox = ({children}) => (
   <form className="form-horizontal well">
     {children}
   </form>
 );
+
+InputBox.propTypes = {
+ children: React.PropTypes.node.isRequired
+}
+
+export default InputBox;
