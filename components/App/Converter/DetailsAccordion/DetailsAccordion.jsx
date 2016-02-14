@@ -12,7 +12,7 @@ import DetailsPanel from './DetailsPanel.jsx';
 const DetailsAccordion = ({priceOutput}) => (
 		<Accordion defaultActiveKey="0">
 				<Panel header="More rates" eventKey="1">
-						<MoreRatesPanel priceOutput={priceOutput}/>
+						<MoreRatesPanel {...priceOutput}/>
 				</Panel>
 				<Panel header={detailsHeader(priceOutput)} eventKey="2">
 						<DetailsPanel {...priceOutput}/>
