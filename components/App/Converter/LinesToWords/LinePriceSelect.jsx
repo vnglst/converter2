@@ -8,6 +8,14 @@ import PriceSelect from '../PriceSelect.jsx';
 
 const priceOptions = utils.generatePriceOptions(0.90, 2.5, 0.05);
 
-export default (props) => (
-  <PriceSelect {...props} onPriceChange={props._changeLinePrice} priceLabel="Rate per line" priceOptions={priceOptions} currentPrice={props.linePrice}/>
+const LinePriceSelect = ({_changeLinePrice, linePrice}) => (
+  <PriceSelect onPriceChange={_changeLinePrice} priceLabel="Rate per line" priceOptions={priceOptions} currentPrice={linePrice}/>
 )
+
+LinePriceSelect.propTypes = {
+ _changeLinePrice: React.PropTypes.func.isRequired,
+ linePrice: React.PropTypes.string.isRequired 
+}
+
+
+export default LinePriceSelect;

@@ -18,12 +18,12 @@ export default class App extends React.Component {
 		constructor(props) {
 				super(props);
 				const defaultState = {
-						charsPerLine: 55,
-						charsPerPage: 1500,
-						wordsPerDay: 2000,
-						hoursPerDay: 7
+						charsPerLine: '55',
+						charsPerPage: '1500',
+						wordsPerDay: '2000',
+						hoursPerDay: '7'
 				};
-				this.storeName = 'AppState-v-10-02-2016';
+				this.storeName = 'AppState-v-15-02-2016';
 				const storedState = store(this.storeName);
 				this.state = storedState || defaultState;
 		};
