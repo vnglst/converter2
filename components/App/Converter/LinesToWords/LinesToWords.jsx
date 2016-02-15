@@ -10,7 +10,7 @@ import calcPrices from '../../utils/calcPrices.js';
 import InputBox from '../InputBox.jsx';
 import SourceLangSelect from '../SourceLangSelect.jsx';
 import LinePriceSelect from './LinePriceSelect.jsx';
-import WordPriceOutput from './WordPriceOutput.jsx';
+import PriceOutput from '../PriceOutput.jsx';
 import DetailsAccordion from '../DetailsAccordion/DetailsAccordion.jsx';
 
 export default class LinesToWords extends React.Component {
@@ -43,7 +43,7 @@ export default class LinesToWords extends React.Component {
 										<LinePriceSelect {...this.state} _changeLinePrice={this._changeLinePrice}/>
 										<SourceLangSelect {...this.state} _changeSourceLang={this._changeSourceLang} languageData={languageData}/>
 										<hr />
-										<WordPriceOutput {...this.state} priceOutput={priceOutput}/>
+										<PriceOutput priceStr={priceOutput.wordPriceStr} priceLabel="Per word"/>
 								</InputBox>
 								<DetailsAccordion {...this.state} priceOutput={priceOutput}/>
 						</div>

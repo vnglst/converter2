@@ -39,13 +39,13 @@ const Settings = ({
 
 Settings.propTypes = {
 		_changeCharsPerLine: React.PropTypes.func.isRequired,
-		charsPerLine: React.PropTypes.number.isRequired,
+		charsPerLine: React.PropTypes.string.isRequired,
 		_changeCharsPerPage: React.PropTypes.func.isRequired,
-		charsPerPage: React.PropTypes.number.isRequired,
+		charsPerPage: React.PropTypes.string.isRequired,
 		_changeWordsPerDay: React.PropTypes.func.isRequired,
-		wordsPerDay: React.PropTypes.number.isRequired,
+		wordsPerDay: React.PropTypes.string.isRequired,
 		_changeHoursPerDay: React.PropTypes.func.isRequired,
-		hoursPerDay: React.PropTypes.number.isRequired
+		hoursPerDay: React.PropTypes.string.isRequired
 }
 
 export default Settings;
