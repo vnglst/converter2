@@ -40,7 +40,7 @@ export default class LinesToWords extends React.Component {
 				return (
 						<div>
 								<InputBox >
-										<LinePriceSelect {...this.state} _changeLinePrice={this._changeLinePrice}/>
+										<LinePriceSelect linePrice={linePrice} _changeLinePrice={this._changeLinePrice}/>
 										<SourceLangSelect {...this.state} _changeSourceLang={this._changeSourceLang} languageData={languageData}/>
 										<hr />
 										<PriceOutput priceStr={priceOutput.wordPriceStr} priceLabel="Per word"/>

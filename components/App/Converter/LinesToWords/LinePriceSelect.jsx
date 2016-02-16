@@ -14,8 +14,7 @@ const LinePriceSelect = ({_changeLinePrice, linePrice}) => (
 
 LinePriceSelect.propTypes = {
  _changeLinePrice: React.PropTypes.func.isRequired,
- linePrice: React.PropTypes.string.isRequired 
+ linePrice: React.PropTypes.string.isRequired
 }
-
 
 export default LinePriceSelect;
