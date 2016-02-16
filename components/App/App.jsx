@@ -23,7 +23,7 @@ export default class App extends React.Component {
 						wordsPerDay: '2000',
 						hoursPerDay: '7'
 				};
-				this.storeName = 'AppState-v-15-02-2016';
+				this.storeName = 'AppState-v-16-02-2016';
 				const storedState = store(this.storeName);
 				this.state = storedState || defaultState;
 		};
