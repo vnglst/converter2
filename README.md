@@ -13,12 +13,16 @@ $ npm install
 $ npm start
 ```
 
-### How to Deploy
+### How to Deploy on Surge
 
 ```shell
 $ npm run deploy                # Deploys the project to surge.sh
 ```
 Using ```git commit``` also runs the deploy command.
+
+### How to Deploy on a Server
+
+- See [Caddyfile gist](https://gist.github.com/vnglst/354ca3208b6dfdfbae81)
 
 ### Structure App
 
