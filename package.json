@@ -52,6 +52,7 @@
     "psi": "^2.0.2",
     "raw-loader": "^0.5.1",
     "react": "^0.14.0",
+    "react-addons-test-utils": "^0.14.7",
     "react-bootstrap": "^0.28.1",
     "react-dom": "^0.14.0",
     "react-remarkable": "^1.1.1",
