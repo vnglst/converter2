@@ -22,6 +22,4 @@ describe('Testing PriceOutput component', () => {
   expect(output.props.className).to.equal('form-group');
  });
 
- console.log(output);
-
 });
