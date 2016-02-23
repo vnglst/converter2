@@ -13,14 +13,19 @@ $ npm install
 $ npm start
 ```
 
-### How to Deploy on Surge
+### Deploy beta
 
 ```shell
-$ npm run deploy                # Deploys the project to surge.sh
+$ npm run deploy-beta           # deploys with surge on converter-beta.vangilst.de
 ```
-Using ```git commit``` also runs the deploy command.
 
-### How to Deploy on a Server
+### How to Deploy
+
+```shell
+$ npm run deploy                # Deploys the project to converter.vangilst.de
+```
+
+### How to Deploy on a Server with Caddy
 
 - See [Caddyfile gist](https://gist.github.com/vnglst/354ca3208b6dfdfbae81)
 
