@@ -10,7 +10,7 @@
     "clean": "babel-node --eval \"require('./tools/clean')().catch(err => console.log(err.stack))\"",
     "build": "babel-node --eval \"require('./tools/build')().catch(err => console.log(err.stack))\"",
     "start": "babel-node --eval \"require('./tools/start')().catch(err => console.log(err.stack))\"",
-    "deploy": "npm test && npm run build release && rsync -au ./build/ caddy@178.62.196.36:/opt/converter",
+    "deploy": "npm run build release && surge -d converter.vangilst.de -p ./build",
     "deploy-beta": "npm run build release && surge -d converter-beta.vangilst.de -p ./build && npm run chrome-beta",
     "chrome-beta": "open -a Google\\ Chrome http://converter-beta.vangilst.de",
     "pagespeed": "node node_modules/psi/cli.js --nokey --strategy=mobile converter.vangilst.de && node node_modules/psi/cli.js --nokey --strategy=desktop converter.vangilst.de",
