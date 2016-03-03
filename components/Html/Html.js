@@ -18,14 +18,13 @@ function Html({ title, description, body, debug }) {
         <title>{title || config.title}</title>
         <meta name="description" content={description || config.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href={bootswatchCDN} media="bogus-real-load-below"/>
+        <link rel="stylesheet" href={bootswatchCDN}/>
         <script async src={'/app.js?' + new Date().getTime()} />
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{ __html: body }} />
         <GoogleAnalytics />
         <Fonts />
-        <link rel="stylesheet" href={bootswatchCDN} />
       </body>
     </html>
   );
