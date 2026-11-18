@@ -1,0 +1,24 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Koen van Gilst -- @vnglst
+
+# THANKS
+
+    Konstantin Tarkus -- @koistya
+
+
+# TECHNOLOGY COLOPHON
+
+    koistya/react-static-boilerplate
+    React.js
+    postCSS
+    Sass
+    ES6+
+    Babel
+    Webpack
+    BrowserSync
+    React Hot Loader
+    Surge.sh

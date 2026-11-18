@@ -41,7 +41,6 @@ The app itself is located in the Components folder and has the following structu
 ├── Content
 ├── Fonts
 ├── Footer
-├── GoogleAnalytics
 ├── Html
 ├── Layout
 ├── Link

@@ -5,5 +5,7 @@
 export default {
   title: 'Translator`s Converter',
 raddescription: 'Helps translators convert line to word rates.',
-  googleAnalyticsId: 'UA-39537146-3',
+  // Self-hosted Plausible (see coolify-agent/features/plausible.md)
+  plausibleDomain: 'converter.koenvangilst.nl',
+  plausibleSrc: 'https://plausible.koenvangilst.nl/js/script.js',
 };

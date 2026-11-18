@@ -10,6 +10,7 @@
     "clean": "babel-node --eval \"require('./tools/clean')().catch(err => console.log(err.stack))\"",
     "build": "babel-node --eval \"require('./tools/build')().catch(err => console.log(err.stack))\"",
     "start": "babel-node --eval \"require('./tools/start')().catch(err => console.log(err.stack))\"",
+    "dist": "npm run build release && rm -rf dist && cp -R build dist && rm dist/app.node.js dist/CNAME",
     "deploy": "npm test && npm run build release && surge -d converter.vangilst.de -p ./build",
     "deploy-koenvangilst": "npm test && npm run build release && surge -d converter.koenvangilst.nl -p ./build",
     "deploy-beta": "npm run build release && surge -d converter-beta.vangilst.de -p ./build && npm run chrome-beta",
