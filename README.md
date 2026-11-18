@@ -17,7 +17,6 @@ $ yarn start
 
 The site is a static export, self-hosted on Coolify through the shared
 `static-sites` Nginx container (see `coolify-agent/features/static-sites.md`).
-Visitor stats come from self-hosted Plausible at https://plausible.koenvangilst.nl.
 
 ```shell
 $ npm run dist               # builds a release into dist/ (commit the result)
