@@ -1,6 +1,6 @@
 # Translator's Converter
 
-See it in action here: [http://converter.vangilst.de](http://converter.vangilst.de)
+See it in action here: [https://converter.koenvangilst.nl](https://converter.koenvangilst.nl)
 
 ### Getting Started
 
@@ -13,17 +13,18 @@ $ yarn
 $ yarn start
 ```
 
-### Deploy beta
-
-```shell
-$ yarn deploy-beta           # deploys with surge on converter-beta.vangilst.de
-```
-
 ### How to Deploy
 
+The site is a static export, self-hosted on Coolify through the shared
+`static-sites` Nginx container (see `coolify-agent/features/static-sites.md`).
+Visitor stats come from self-hosted Plausible at https://plausible.koenvangilst.nl.
+
 ```shell
-$ yarn deploy                # Deploys the project to converter.vangilst.de
+$ npm run dist               # builds a release into dist/ (commit the result)
 ```
+
+Push `dist/` to `master`, then update this repo's pinned commit in
+`static-sites` to publish it on converter.koenvangilst.nl.
 
 ### Structure App
 
@@ -41,7 +42,6 @@ The app itself is located in the Components folder and has the following structu
 ├── Content
 ├── Fonts
 ├── Footer
-├── GoogleAnalytics
 ├── Html
 ├── Layout
 ├── Link
