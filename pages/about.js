@@ -18,7 +18,7 @@ export default class extends Component {
 
         <h2>Help needed</h2>
         <p>
-          I made the Translator's Converter as a <span className="strikethrough">weekend</span> side project and I'd love to get feedback from fellow translators. What features are still missing? Are the results accurate for languages other than the ones I speak (Dutch, German & English)? I'm also specifically looking for the number of characters per word (including spaces) for different kinds of texts (e.g. legal, technical, financial and marketing texts). Feel free to contact me on <a href="https://twitter.com/vnglst">Twitter</a> or via <a href="http://vangilst.de/en/contact/">email</a>.
+          I made the Translator's Converter as a <span className="strikethrough">weekend</span> side project and I'd love to get feedback from fellow translators. What features are still missing? Are the results accurate for languages other than the ones I speak (Dutch, German & English)? I'm also specifically looking for the number of characters per word (including spaces) for different kinds of texts (e.g. legal, technical, financial and marketing texts). Feel free to contact me on <a href="https://twitter.com/vnglst">Twitter</a>.
         </p>
 
         <h2>Default values</h2>
