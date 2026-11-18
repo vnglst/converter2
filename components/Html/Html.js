@@ -20,6 +20,13 @@ function Html({ title, description, body, debug }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="stylesheet" href={bootswatchCDN} />
 				<script src={'/app.js?' + new Date().getTime()} />
+				{!debug && (
+					<script
+						defer
+						data-domain={config.plausibleDomain}
+						src={config.plausibleSrc}
+					/>
+				)}
 			</head>
 			<body>
 				<div id="app" dangerouslySetInnerHTML={{ __html: body }} />
